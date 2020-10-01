@@ -350,15 +350,6 @@
   
   /* ALL OTHERS */
   @media only screen and (min-width: 750px) {
-    /*
-    hr {
-      width: 90%;
-      height: 20px;
-      border: 4px solid #90a872;
-      background-color: white;
-    }
-    */
-  
     /* fixes other anchors not in nav */
     a {
       position: relative;
@@ -382,42 +373,7 @@
       letter-spacing: 4px;
     }
   
-    /*WELCOME SECTION*/
-    #welcome-section {
-      height: 100vh; /* FCC REQ for welcome section height */
-      display: flex;
-      flex-direction: row;
-      justify-content: space-evenly;
-      align-items: center;
-    }
-    #welcome-section header {
-      padding-left: 10px;
-      padding-right: 10px;
-      display: flex;
-      flex-direction: column;
-    }
-    #welcome-section h1 {
-      margin: 0;
-      padding: 0;
-      font-size: 60px;
-      letter-spacing: -3px;
-      white-space: nowrap;
-      line-height: 70px;
-    }
-    #welcome-section img {
-      width: 100%;
-      height: auto; /* keeps original aspect ratio */
-      max-width: 500px;
-      min-width: 350px;
-      padding: 10px;
-      border-radius: 100%;
-      margin: 10px;
-      border: 10px solid #dde3c1;
-  
-      background-color: white;
-    }
-  
-    /* Navigation */
+    /* NAVIGATION */
     #navbar {
       width: 100%;
       height: 100%;
@@ -454,18 +410,60 @@
       color: green;
       transition: 400ms;
     }
+
+
+
+
+    /* WELCOME SECTION */
+    #welcome-section {
+      height: 100vh; /* FCC REQ for welcome section height */
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+    #welcome-section header {
+      padding-left: 10px;
+      padding-right: 10px;
+      display: flex;
+      flex-direction: column;
+    }
+    #welcome-section h1 {
+      margin: 0;
+      padding: 0;
+      font-size: 60px;
+      letter-spacing: -3px;
+      white-space: nowrap;
+      line-height: 70px;
+    }
+    #welcome-section img {
+      width: 100%;
+      height: auto; /* keeps original aspect ratio */
+      max-width: 500px;
+      min-width: 350px;
+      padding: 10px;
+      border-radius: 100%;
+      margin: 10px;
+      border: 10px solid #dde3c1;
   
-    /*PROJECTS SECTION*/
+      background-color: white;
+    }
+
+    #chicagoskyline {
+      width: 100%;
+      height: auto; /*keeps original aspect ratio */
+      transform: translateY(5px); /* gets rid of fusion line between image and projects section */
+    }
+  
+    /* PROJECTS SECTION */
     #projects {
       display: flex;
       justify-content: space-evenly;
       flex-wrap: wrap;
-  
+      border-radius: 0 0 50% 50% / 0 0 3% 3%;
       padding-top: 150px;
       padding-bottom: 150px;
       background-color: #090d05;
-  
-      border-radius: 0 0 50% 50% / 0 0 3% 3%;
       overflow: hidden;
     }
     #projects a:hover {

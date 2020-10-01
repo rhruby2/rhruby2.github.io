@@ -1,7 +1,7 @@
 /*
 https://stackoverflow.com/questions/3858466/css-expanding-based-on-portrait-or-landscape-screen-size
 
-Orientation
+TODO: orientation css only looks at ratio between width and height, therefore need to make desktop portrait media query (bigger width)
 */
 
 
@@ -109,6 +109,13 @@ body {
         border: 10px solid #dde3c1;
         background-color: white;
     }
+
+    #chicagoskyline {
+        width: 100%;
+        height: auto; /*keeps original aspect ratio */
+        transform: translateY(5px); /* gets rid of fusion line between image and projects section */
+    }
+
     /* Navigation */
     #navbar {
         width: 100%;
