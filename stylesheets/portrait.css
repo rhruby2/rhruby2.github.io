@@ -37,6 +37,21 @@ body {
 /* ALL OTHERS */
 
 @media only screen {
+    h1{
+        font-size: 3.5em;
+    }
+    p{
+        font-size: 1.4em;
+    }
+
+    hr{
+        border-width: 1px;
+        color: #090d05;
+        background-color: #090d05;
+        height: 1px;
+        width: 100%;
+    }
+
     /* fixes other anchors not in nav */
     a {
         position: relative;
@@ -179,12 +194,14 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        align-items: center;
         width: 80%;
-        background-color: #f5f7eb;
+
+        background-color: #273028;
         color: #90a872;
         margin: 25px;
-        border-radius: 20px;
+        padding: 20px;
+        
+        border-radius: 8px;
         overflow: hidden;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     }
@@ -197,10 +214,19 @@ body {
         width: 100%;
         height: 100%;
     }
-    .project-tile-header {
-        font-size: 3em;
-        padding: 10px;
+    .project-tile-tags{
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+    .project-tile-body{
+        padding-top: 15px;
+        padding-bottom: 15px;
     }
+    .project-tile-description{
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    
     #contact {
         min-height: 50vh;
         width: 100%;
