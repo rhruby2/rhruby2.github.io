@@ -350,6 +350,11 @@
   
   /* ALL OTHERS */
   @media only screen and (min-width: 750px) {
+
+    h1{
+      font-size: 1.5em;
+
+    }
     /* fixes other anchors not in nav */
     a {
       position: relative;
@@ -371,6 +376,14 @@
       flex-direction: column;
       align-items: center;
       letter-spacing: 4px;
+    }
+
+    hr{
+      border-width: 0px;
+      color: #090d05;
+      background-color: #090d05;
+      height: 1px;
+      width: 100%;
     }
   
     /* NAVIGATION */
@@ -410,9 +423,6 @@
       color: green;
       transition: 400ms;
     }
-
-
-
 
     /* WELCOME SECTION */
     #welcome-section {
@@ -478,14 +488,17 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      align-items: center;
-  
+      /*
       background-color: #f5f7eb;
       color: #90a872;
-      min-width: 400px;
+      */
+      background-color: #273028;
+      color: #90a872;
+      max-width: 400px;
       margin: 15px;
+      padding: 10px;
   
-      border-radius: 20px;
+      border-radius: 0px;
       overflow: hidden;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     }
@@ -501,10 +514,19 @@
       width: 100%;
       height: 100%;
     }
-    .project-tile-header {
-      font-size: 1.5rem;
-      padding: 10px;
+    .project-tile-tags{
+      padding: 15px;
     }
+    .project-tile-body{
+      padding: 15px;
+    }
+    .project-tile-description{
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+
+    /* CONTACT SECTION */
   
     #contact {
       min-height: 200px;
