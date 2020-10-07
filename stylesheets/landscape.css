@@ -103,9 +103,9 @@ li a:hover {
   overflow-x: hidden;
   /* changing auto to scroll improves Firefox performance slightly*/
   overflow-y: scroll;
-  /* trying perspective-origin and transform-origin solution*/
-  perspective-origin: 0 0;
-  /* -webkit-perspective-origin-x: 100%; */
+  /* HOTFIX: NOT USING: trying perspective-origin and transform-origin solution*/
+  /*perspective-origin: 0 0;*/
+  -webkit-perspective-origin-x: 100%;
   }
 .parallax-group {
   position: relative; /* allow child 'parallax__layer elements to be positioned relative to group element */
@@ -121,8 +121,8 @@ li a:hover {
   bottom: 0;
   left: 0px;
   /* changed from 100% to take scroll bar into account */
-  /*-webkit-transform-origin-x: 100vw;*/
-  transform-origin: 0 0;
+  -webkit-transform-origin-x: 100vw;
+  /*transform-origin: 0 0;*/
   }  
 /* untested */
 .parallax-layer-fore {
@@ -131,14 +131,14 @@ li a:hover {
   z-index: 1;
   }
 .parallax-layer-base {
-  transform-origin: 0 0;
+  /*transform-origin: 0 0;*/
   -webkit-transform: translateZ(0);
   -moz-transform: translateZ(0);
   transform: translateZ(0);
   z-index: 2;
   }
 .parallax-layer-back {
-  transform-origin: 0 0;
+  /*transform-origin: 0 0;*/
   -webkit-transform: translateZ(-3px) scale(4);
   -moz-transform: translateZ(-3px) scale(4);
   transform: translateZ(-3px) scale(4);
