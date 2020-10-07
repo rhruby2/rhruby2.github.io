@@ -39,62 +39,61 @@
             <p>Aspiring Software Developer in Chicago, Illinois. I speak a lot of (programming) languages.</p>
         </header>
 
-        <!-- did not use figure tag here, it messes up flexbox -->
-        <img src="https://raw.githubusercontent.com/rhruby2/FreeCodeCamp/master/Assets/profile0square.PNG" alt="Portrait">
-
+        <!-- picture elements are invisible containers, therefore keep styling to img-->
+        <picture>
+            <source type="image/webp" srcset="images/profile0square-786w.webp 1x, images/profile0square-1024w.webp 2x">
+            <img src="images/profile0square-786w.png" srcset="images/profile0square-1024w 2x" alt="Profile Image">
+        </picture>
         
     </section>
 
     <img id="chicagoskyline" src="images/chicagopixelbgw.png" alt="Chicago Skyline in Black and White">
 
     <section id="projects">
-        <a class="project-tile" href="https://codepen.io/rhruby2/full/eYNBWoK" target="_blank">
+        <a class="project-tile" href="https://github.com/rhruby2/rhruby2.github.io" target="_blank">
             <div class="project-tile-img">
-                <img src="https://raw.githubusercontent.com/rhruby2/FreeCodeCamp/master/Assets/TechnicalSpecificationScreenshot.PNG" alt="techincal specifications screenshot">
+                <picture>
+                    <source type="image/webp" srcset="images/rhruby2githubio-screenshot-786w.webp 1x, images/rhruby2githubio-screenshot-1024w.webp 2x">
+                    <img src="images/rhruby2githubio-screenshot-480w.png" srcset="images/rhruby2githubio-screenshot-786w.png 1x, images/rhruby2githubio-screenshot-1024w.png 2x" alt="Screenshot of current webpage">
+                </picture>
             </div>
             <p class="project-tile-tags">HTML | CSS</p>
             <hr>
             <div class="project-tile-body">
-                <h1 class="project-tile-header">Technical Documentation</h1>
+                <h1 class="project-tile-header">rhruby2.github.io</h1>
                 <p class="project-tile-description">
-                    Online manual for the Plumbus from the Rick and Morty Show.
+                    This webpage! A portfolio started from scratch.
                 </p>
             </div>
         </a>
-
-        <a class="project-tile" href="https://codepen.io/rhruby2/pen/ExaeMea" target="_blank">
+        <a class="project-tile" href="https://codepen.io/rhruby2/full/OJMgWBd" target="_blank">
             <div class="project-tile-img">
-                <img src="https://raw.githubusercontent.com/rhruby2/FreeCodeCamp/master/Assets/ProductLandingPageScreenshot.PNG" alt="product landing page screenshot">
+                <picture>
+                    <source type="image/webp" srcset="images/choropleth-786w.webp 1x, images/choropleth-1024w.webp 2x">
+                    <img src="images/choropleth-480w.png" 
+                        srcset="images/choropleth-786w.png 1x, images/choropleth-1024w.png 2x" 
+                        alt="United States Choropleth Map screenshot">
+                </picture>
             </div>
-            <p class="project-tile-tags">HTML | CSS</p>
-            <hr>
-            <div class = "project-tile-body">
-                <h1 class="project-tile-header">Product Landing Page</h1>
-                <p class ="project-tile-description">
-                    Landing page for a fictional small business that makes delicious taffy inside a tower.
-                </p>
-            </div>
-        </a>
-
-        <a class="project-tile" href="https://github.com/rhruby2/Every-Day-Is-Halloween-VR" target="_blank">
-            <div class="project-tile-img">
-                <img src="https://raw.githubusercontent.com/rhruby2/rhruby2.github.io/master/images/p2hrubyhuynh.png" alt="Halloween VR screenshot">
-            </div>
-            <p class="project-tile-tags">Unity3D | SteamVR</p>
+            <p class="project-tile-tags">D3.js | CSS</p>
             <hr>
             <div class="project-tile-body">
-                <h1 class="project-tile-header">Everyday is Halloween VR</h1>
+                <h1 class="project-tile-header">Choropleth Map</h1>
                 <p class="project-tile-description">
-                    Halloween funhouse themed virtual reality project.
+                    A choropleth map of United States Educational Attainment.
                 </p>
             </div>
         </a>
-
         <a class="project-tile" href="https://codepen.io/rhruby2/full/VwvMaoV" target="_blank">
             <div class="project-tile-img">
-                <img src="https://raw.githubusercontent.com/rhruby2/rhruby2.github.io/master/images/pomodoro.png" alt="Pomodoro Clock screenshot">
+                <picture>
+                    <source type="image/webp" srcset="images/pomodoro-786w.webp 1x, images/pomodoro-1024w.webp 2x">
+                    <img src="images/pomodoro-480w.png" 
+                        srcset="images/pomodoro-786w.png 1x, images/pomodoro-1024w.png 2x" 
+                        alt="Pomodoro Clock screenshot">
+                </picture>
             </div>
-            <p class="project-tile-tags">React | CSS</p>
+            <p class="project-tile-tags">React.js | CSS</p>
             <hr>
             <div class="project-tile-body">
                 <h1 class="project-tile-header">Pomodoro Clock</h1>
@@ -103,10 +102,48 @@
                 </p>
             </div>
         </a>
-        
+        <a class="project-tile" href="https://github.com/rhruby2/Project-X" target="_blank">
+            <div class="project-tile-img">
+                <picture>
+                    <source type="image/webp" srcset="images/projectXMap-786w.webp 1x, images/projectXMap-1024w.webp 2x">
+                    <img src="images/projectXMap-480w.png" 
+                        srcset="images/projectXMap-786w.png 1x, images/projectXMap-1024w.png 2x" 
+                        alt="Chicago Beach Water Quality Map Screenshot">
+                </picture>
+            </div>
+            <p class="project-tile-tags">Jupyter | R</p>
+            <hr>
+            <div class="project-tile-body">
+                <h1 class="project-tile-header">Beach Water Quality</h1>
+                <p class="project-tile-description">
+                    Analyzation of Chicago beach water quality.
+                </p>
+            </div>
+        </a>
+        <a class="project-tile" href="https://github.com/rhruby2/Every-Day-Is-Halloween-VR" target="_blank">
+            <div class="project-tile-img">
+                <picture>
+                    <source type="image/webp" srcset="images/p2hrubyhuynh-768w.webp 1x, images/p2hrubyhuynh-1024w.webp 2x">
+                    <img src="images/p2hrubyhuynh-480w.png" srcset="images/p2hrubyhuynh-768w.png 1x, images/p2hrubyhuynh-1024w.png 2x" alt="Profile Image">
+                </picture>
+            </div>
+            <p class="project-tile-tags">Unity3D | C# | SteamVR</p>
+            <hr>
+            <div class="project-tile-body">
+                <h1 class="project-tile-header">Everyday is Halloween VR</h1>
+                <p class="project-tile-description">
+                    Halloween funhouse themed virtual reality project.
+                </p>
+            </div>
+        </a>
         <a class="project-tile" href="https://github.com/nsakhnini/senior-society" target="_blank">
             <div class="project-tile-img">
-                <img src="https://raw.githubusercontent.com/rhruby2/rhruby2.github.io/master/images/seniorSocietyLandingPage.png" alt="Senior Society landing page screenshot">
+                <picture>
+                    <source type="image/webp" srcset="images/seniorSocietyLandingPage-786w.webp 1x, images/seniorSocietyLandingPage-1024w.webp 2x">
+                    <img src="images/seniorSocietyLandingPage-480w.png" 
+                    srcset="images/seniorSocietyLandingPage-786w.png 1x, images/seniorSocietyLandingPage-1024w.png 2x" 
+                    alt="Senior Society landing page screenshot">
+                </picture>
             </div>
             <p class="project-tile-tags">HTML | JS | JQuery | CSS</p>
             <hr>
@@ -117,10 +154,14 @@
                 </p>
             </div>
         </a>
-
         <a class="project-tile" href="https://github.com/dgh0st/nerd" target="_blank">
             <div class="project-tile-img">
-                <img src="https://raw.githubusercontent.com/rhruby2/rhruby2.github.io/master/images/CS342ProjectNerd.png" alt="Nerd project screenshot">
+                <picture>
+                    <source type="image/webp" srcset="images/CS342ProjectNerd-786w.webp 1x, images/CS342ProjectNerd-1024w.webp 2x">
+                    <img src="images/CS342ProjectNerd-480w.png" 
+                        srcset="images/CS342ProjectNerd-786w.png 1x, images/CS342ProjectNerd-1024w.png 2x" 
+                        alt="Nerd project screenshot">
+                </picture>
             </div>
             <p class="project-tile-tags">Git | Java</p>
             <hr>
