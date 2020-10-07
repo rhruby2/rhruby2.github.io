@@ -97,16 +97,19 @@ li a:hover {
 }
 .parallax{
   -webkit-perspective: 1px;
+  -moz-perspective: 1px;
   perspective: 1px;
   height: 100vh; /* window for parallax effects */
   overflow-x: hidden;
-  overflow-y: auto;
-  
-  -webkit-perspective-origin-x: 100%;
+  /* changing auto to scroll improves Firefox performance slightly*/
+  overflow-y: scroll;
+  /* trying perspective-origin and transform-origin solution*/
+  perspective-origin: 0 0;
+  /* -webkit-perspective-origin-x: 100%; */
   }
 .parallax-group {
   position: relative; /* allow child 'parallax__layer elements to be positioned relative to group element */
-  -webkit-transorm-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d; /* prevents browser from flattening 'parallax__layer' */
   }
 .parallax-layer{
@@ -118,7 +121,8 @@ li a:hover {
   bottom: 0;
   left: 0px;
   /* changed from 100% to take scroll bar into account */
-  -webkit-transform-origin-x: 100vw;
+  /*-webkit-transform-origin-x: 100vw;*/
+  transform-origin: 0 0;
   }  
 /* untested */
 .parallax-layer-fore {
@@ -127,12 +131,16 @@ li a:hover {
   z-index: 1;
   }
 .parallax-layer-base {
+  transform-origin: 0 0;
   -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
   transform: translateZ(0);
   z-index: 2;
   }
 .parallax-layer-back {
+  transform-origin: 0 0;
   -webkit-transform: translateZ(-3px) scale(4);
+  -moz-transform: translateZ(-3px) scale(4);
   transform: translateZ(-3px) scale(4);
   z-index: 3;
   }
