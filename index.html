@@ -1,10 +1,5 @@
-<!--
-09/30/2020 
--->
-
 <!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <script src="https://kit.fontawesome.com/9432c5c737.js" crossorigin="anonymous"></script>
@@ -25,130 +20,135 @@
 </head>
 
 <body>
-    <nav id="navbar">
-        <ul>
-            <li><a href="#welcome-section">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <div class="parallax">
+        <nav id="navbar">
+            <ul>
+                <li><a href="#welcome-top-anchor">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div id="welcome-top-anchor"></div>
+        <div class="parallax-group" style="height:100vh;">
+            <section id="welcome-section" class="parallax-layer parallax-layer-back">
+                <header>
+                    <h1>WELCOME<br>I'M RAYMOND</h1>
+                    <p>Aspiring Software Developer in Chicago, Illinois. I speak a lot of (programming) languages.</p>
+                </header>
 
-    <section id="welcome-section">
-        <header>
-            <h1>WELCOME<br>I'M RAYMOND</h1>
-            <p>Aspiring Software Developer in Chicago, Illinois. I speak a lot of (programming) languages.</p>
-        </header>
-
-        <!-- did not use figure tag here, it messes up flexbox -->
-        <img src="https://raw.githubusercontent.com/rhruby2/FreeCodeCamp/master/Assets/profile0square.PNG" alt="Portrait">
-
-        
-    </section>
-
-    <img id="chicagoskyline" src="images/chicagopixelbgw.png" alt="Chicago Skyline in Black and White">
-
-    <section id="projects">
-        <a class="project-tile" href="https://codepen.io/rhruby2/full/eYNBWoK" target="_blank">
-            <div class="project-tile-img">
-                <img src="https://raw.githubusercontent.com/rhruby2/FreeCodeCamp/master/Assets/TechnicalSpecificationScreenshot.PNG" alt="techincal specifications screenshot">
-            </div>
-            <p class="project-tile-tags">HTML | CSS</p>
-            <hr>
-            <div class="project-tile-body">
-                <h1 class="project-tile-header">Technical Documentation</h1>
-                <p class="project-tile-description">
-                    Online manual for the Plumbus from the Rick and Morty Show.
-                </p>
-            </div>
-        </a>
-
-        <a class="project-tile" href="https://codepen.io/rhruby2/pen/ExaeMea" target="_blank">
-            <div class="project-tile-img">
-                <img src="https://raw.githubusercontent.com/rhruby2/FreeCodeCamp/master/Assets/ProductLandingPageScreenshot.PNG" alt="product landing page screenshot">
-            </div>
-            <p class="project-tile-tags">HTML | CSS</p>
-            <hr>
-            <div class = "project-tile-body">
-                <h1 class="project-tile-header">Product Landing Page</h1>
-                <p class ="project-tile-description">
-                    Landing page for a fictional small business that makes delicious taffy inside a tower.
-                </p>
-            </div>
-        </a>
-
-        <a class="project-tile" href="https://github.com/rhruby2/Every-Day-Is-Halloween-VR" target="_blank">
-            <div class="project-tile-img">
-                <img src="https://raw.githubusercontent.com/rhruby2/rhruby2.github.io/master/images/p2hrubyhuynh.png" alt="Halloween VR screenshot">
-            </div>
-            <p class="project-tile-tags">Unity3D | SteamVR</p>
-            <hr>
-            <div class="project-tile-body">
-                <h1 class="project-tile-header">Everyday is Halloween VR</h1>
-                <p class="project-tile-description">
-                    Halloween funhouse themed virtual reality project.
-                </p>
-            </div>
-        </a>
-
-        <a class="project-tile" href="https://codepen.io/rhruby2/full/VwvMaoV" target="_blank">
-            <div class="project-tile-img">
-                <img src="https://raw.githubusercontent.com/rhruby2/rhruby2.github.io/master/images/pomodoro.png" alt="Pomodoro Clock screenshot">
-            </div>
-            <p class="project-tile-tags">React | CSS</p>
-            <hr>
-            <div class="project-tile-body">
-                <h1 class="project-tile-header">Pomodoro Clock</h1>
-                <p class="project-tile-description">
-                    Productivity clock complete with a minimal design.
-                </p>
-            </div>
-        </a>
-        
-        <a class="project-tile" href="https://github.com/nsakhnini/senior-society" target="_blank">
-            <div class="project-tile-img">
-                <img src="https://raw.githubusercontent.com/rhruby2/rhruby2.github.io/master/images/seniorSocietyLandingPage.png" alt="Senior Society landing page screenshot">
-            </div>
-            <p class="project-tile-tags">HTML | JS | JQuery | CSS</p>
-            <hr>
-            <div class="project-tile-body">
-                <h1 class="project-tile-header">Senior Society</h1>
-                <p class="project-tile-description">
-                    Mockup social networking application designed for Seniors.
-                </p>
-            </div>
-        </a>
-
-        <a class="project-tile" href="https://github.com/dgh0st/nerd" target="_blank">
-            <div class="project-tile-img">
-                <img src="https://raw.githubusercontent.com/rhruby2/rhruby2.github.io/master/images/CS342ProjectNerd.png" alt="Nerd project screenshot">
-            </div>
-            <p class="project-tile-tags">Git | Java</p>
-            <hr>
-            <div class="project-tile-body">
-                <h1 class="project-tile-header">Nerd</h1>
-                <p class="project-tile-description">
-                    Video game incorporating software design principles.
-                </p>
-            </div>
-        </a>
-    </section>
-
-    <section id="contact">
-        <div class="icon">
-            <a href="https://github.com/rhruby2/" id="profile-link" target="_blank">
-                <i class="fab fa-github fa-7x"></i>
-            </a>
-            <p>GITHUB</p>
+                <img src="https://raw.githubusercontent.com/rhruby2/FreeCodeCamp/master/Assets/profile0square.PNG" alt="Portrait">
+            </section>
         </div>
 
-        <h1>CONTACT ME HERE</h1>
-
-        <div class="icon">
-            <a href="https://www.linkedin.com/in/rhii/" target="_blank">
-                <i class="fab fa-linkedin-in fa-7x"></i>
+        <div class="parallax-group">
+            <div class="parallax-layer parallax-layer-base">
+                <img id="chicagoskyline" src="images/chicagopixelbgw.png" alt="Chicago Skyline in Black and White">
+            </div>
+        </div>
+        
+        <section id="projects" class="layer-base">
+            <a class="project-tile" href="https://codepen.io/rhruby2/full/eYNBWoK" target="_blank">
+                <div class="project-tile-img">
+                    <img src="https://raw.githubusercontent.com/rhruby2/FreeCodeCamp/master/Assets/TechnicalSpecificationScreenshot.PNG" alt="techincal specifications screenshot">
+                </div>
+                <p class="project-tile-tags">HTML | CSS</p>
+                <hr>
+                <div class="project-tile-body">
+                    <h1 class="project-tile-header">Technical Documentation</h1>
+                    <p class="project-tile-description">
+                        Online manual for the Plumbus from the Rick and Morty Show.
+                    </p>
+                </div>
             </a>
-            <p>LINKEDIN</p>
-    </section>
-</body>
+    
+            <a class="project-tile" href="https://codepen.io/rhruby2/pen/ExaeMea" target="_blank">
+                <div class="project-tile-img">
+                    <img src="https://raw.githubusercontent.com/rhruby2/FreeCodeCamp/master/Assets/ProductLandingPageScreenshot.PNG" alt="product landing page screenshot">
+                </div>
+                <p class="project-tile-tags">HTML | CSS</p>
+                <hr>
+                <div class = "project-tile-body">
+                    <h1 class="project-tile-header">Product Landing Page</h1>
+                    <p class ="project-tile-description">
+                        Landing page for a fictional small business that makes delicious taffy inside a tower.
+                    </p>
+                </div>
+            </a>
+    
+            <a class="project-tile" href="https://github.com/rhruby2/Every-Day-Is-Halloween-VR" target="_blank">
+                <div class="project-tile-img">
+                    <img src="https://raw.githubusercontent.com/rhruby2/rhruby2.github.io/master/images/p2hrubyhuynh.png" alt="Halloween VR screenshot">
+                </div>
+                <p class="project-tile-tags">Unity3D | SteamVR</p>
+                <hr>
+                <div class="project-tile-body">
+                    <h1 class="project-tile-header">Everyday is Halloween VR</h1>
+                    <p class="project-tile-description">
+                        Halloween funhouse themed virtual reality project.
+                    </p>
+                </div>
+            </a>
+    
+            <a class="project-tile" href="https://codepen.io/rhruby2/full/VwvMaoV" target="_blank">
+                <div class="project-tile-img">
+                    <img src="https://raw.githubusercontent.com/rhruby2/rhruby2.github.io/master/images/pomodoro.png" alt="Pomodoro Clock screenshot">
+                </div>
+                <p class="project-tile-tags">React | CSS</p>
+                <hr>
+                <div class="project-tile-body">
+                    <h1 class="project-tile-header">Pomodoro Clock</h1>
+                    <p class="project-tile-description">
+                        Productivity clock complete with a minimal design.
+                    </p>
+                </div>
+            </a>
+            
+            <a class="project-tile" href="https://github.com/nsakhnini/senior-society" target="_blank">
+                <div class="project-tile-img">
+                    <img src="https://raw.githubusercontent.com/rhruby2/rhruby2.github.io/master/images/seniorSocietyLandingPage.png" alt="Senior Society landing page screenshot">
+                </div>
+                <p class="project-tile-tags">HTML | JS | JQuery | CSS</p>
+                <hr>
+                <div class="project-tile-body">
+                    <h1 class="project-tile-header">Senior Society</h1>
+                    <p class="project-tile-description">
+                        Mockup social networking application designed for Seniors.
+                    </p>
+                </div>
+            </a>
+    
+            <a class="project-tile" href="https://github.com/dgh0st/nerd" target="_blank">
+                <div class="project-tile-img">
+                    <img src="https://raw.githubusercontent.com/rhruby2/rhruby2.github.io/master/images/CS342ProjectNerd.png" alt="Nerd project screenshot">
+                </div>
+                <p class="project-tile-tags">Git | Java</p>
+                <hr>
+                <div class="project-tile-body">
+                    <h1 class="project-tile-header">Nerd</h1>
+                    <p class="project-tile-description">
+                        Video game incorporating software design principles.
+                    </p>
+                </div>
+            </a>
+        </section>
 
+        <section id="contact" class="layer-base">
+            <div class="icon">
+                <a href="https://github.com/rhruby2/" id="profile-link" target="_blank">
+                    <i class="fab fa-github fa-7x"></i>
+                </a>
+                <p>GITHUB</p>
+            </div>
+    
+            <h1>CONTACT ME HERE</h1>
+    
+            <div class="icon">
+                <a href="https://www.linkedin.com/in/rhii/" target="_blank">
+                    <i class="fab fa-linkedin-in fa-7x"></i>
+                </a>
+                <p>LINKEDIN</p>
+        </section>
+    </div>
+
+</body>
 </html>
