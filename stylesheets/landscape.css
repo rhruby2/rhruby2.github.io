@@ -161,10 +161,12 @@ li a:hover {
   align-items: center;
   padding: 10px;
 }
+
 #welcome-section header {
   padding: 10px;
   display: flex;
   flex-direction: column;
+  max-width: 40%;
 }
 #welcome-section h1 {
   font-size: 4.5em;
@@ -172,19 +174,20 @@ li a:hover {
   white-space: nowrap;
   line-height: 70px;
 }
+/* picture element gets squished to lower width than img */
+#welcome-section picture{
+  min-width: 490px; /* includes border and padding from img */
+}
 #welcome-section img {
-  /* keeps original aspect ratio */
-  width: 100%;
+  max-width: 30vw;
+  min-width: 450px;
   height: auto;
 
-  max-width: 30%;
-  min-width: 450px;
-  padding: 10px;
-  margin: 10px;
   border-radius: 100%;
+  padding: 10px;
   border: 10px solid #dde3c1;
-
   background-color: white;
+  
 }
 
 #chicagoskyline {
