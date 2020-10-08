@@ -128,7 +128,7 @@ body {
     #chicagoskyline {
         width: 100%;
         height: auto; /*keeps original aspect ratio */
-        transform: translateY(5px); /* gets rid of fusion line between image and projects section */
+        transform: translateY(10px); /* gets rid of fusion line between image and projects section */
     }
 
     /* Navigation */
