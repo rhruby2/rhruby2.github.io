@@ -1,48 +1,55 @@
-:root{
+:root {
   --white-green: #f5f7eb;
   --gray-green: #90a872;
   --yellow-green: #d7e360;
   --light-gray-green: #dde3c1;
   --black-green: #090d05;
-  --tile-color:  #273028;
+  --tile-color: #273028;
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
   /* moved from body. Works here with parallax implementation */
   scroll-behavior: smooth;
 }
-body{
+
+body {
   font-size: 16px;
   width: 100%;
+  height: 100%;
   box-sizing: border-box;
-  background-color: var(--white-green,#f5f7eb);
+  background-color: var(--white-green, #f5f7eb);
   color: var(--gray-green, #90a872);
   font-family: Poppins, Arial, sans-serif;
 }
 
-h1{
+h1 {
   font-size: 1.5em;
 }
-hr{
+
+hr {
   border-width: 0px;
-  color: var(--black-green,#090d05);
-  background-color: var(--black-green,#090d05);
+  color: var(--black-green, #090d05);
+  background-color: var(--black-green, #090d05);
   height: 1px;
   width: 100%;
 }
+
 i {
-  color: var(--gray-green,#90a872);
+  color: var(--gray-green, #90a872);
 }
+
 i:hover {
-  color: var(--yellow-green,#d7e360);
+  color: var(--yellow-green, #d7e360);
   transition: 600ms;
 }
+
 .icon:hover {
   color: green;
   transition: 600ms;
 }
+
 .icon {
   display: flex;
   flex-direction: column;
@@ -51,25 +58,30 @@ i:hover {
 }
 
 /* NAVIGATION */
+
 #navbar {
   width: 100%;
   position: sticky;
   top: 0;
   z-index: 10;
 }
+
 ul {
   display: flex;
   flex-direction: row;
   list-style-type: none;
-  overflow: hidden;   /* prevents nav bar from collapsing */
-  background-color: var(--black-green,#090d05);
+  overflow: hidden;
+  /* prevents nav bar from collapsing */
+  background-color: var(--black-green, #090d05);
   box-shadow: 0px 5px 20px 4px rgba(0, 0, 0, 0.2);
 }
+
 li {
   /*so anchors can take up all extra space*/
   width: 100%;
   height: 100%;
 }
+
 li a {
   display: flex;
   justify-content: center;
@@ -78,81 +90,59 @@ li a {
   text-decoration: none;
   color: snow;
 }
+
 li a:hover {
-  background-color: var(--yellow-green,#d7e360);
+  background-color: var(--yellow-green, #d7e360);
   color: green;
   transition: 400ms;
 }
 
-
 /* PARALLAX */
 
-  /*translate moves image back in z index, while scale returns it to original size.*/
-  /*Scale Factor:  1 + (translateZ * -1) / perspective */
+/*translate moves image back in z index, while scale returns it to original size.*/
+
+/*Scale Factor:  1 + (translateZ * -1) / perspective */
 
 /* for content sections not in parallax groups */
-.layer-base{
-  position: relative; /* necessary addition from parallax__group to disallow background peekthrough */
-  z-index: 4;         /* most likely also neccessary */
+.layer-base {
+  position: relative;
+  /* necessary addition from parallax__group to disallow background peekthrough */
+  z-index: 4;
+  /* most likely also neccessary */
 }
-.parallax{
+
+.parallax-container {
+  width: 100%;
+  height: 100vh;
+  /* NEED TO CHANGE W JS window for parallax effects */
+  height: calc(var(--vh, 1vh) * 100);
+  overflow-x: hidden;
+  overflow-y: scroll;
+  perspective-origin: 0 0;
   -webkit-perspective: 1px;
   -moz-perspective: 1px;
   perspective: 1px;
-  height: 100vh; /* window for parallax effects */
-  overflow-x: hidden;
-  /* changing auto to scroll improves Firefox performance slightly*/
-  overflow-y: scroll;
-  /* HOTFIX: NOT USING: trying perspective-origin and transform-origin solution*/
-  /*perspective-origin: 0 0;*/
-  -webkit-perspective-origin-x: 100%;
-  }
-.parallax-group {
-  position: relative; /* allow child 'parallax__layer elements to be positioned relative to group element */
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d; /* prevents browser from flattening 'parallax__layer' */
-  }
-.parallax-layer{
-  /* removing this returns normal blocking behavior of next section and elements without a set height 
-  and those not in a parallax__group. */
-  /* position: absolute; */
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0px;
-  /* changed from 100% to take scroll bar into account */
-  -webkit-transform-origin-x: 100vw;
-  /*transform-origin: 0 0;*/
-  }  
-/* untested */
-.parallax-layer-fore {
-  -webkit-transform: translateZ(90px) scale(.7);
-  transform: translateZ(90px) scale(.7);
-  z-index: 1;
-  }
+  transform-style: preserve-3d;
+}
+
 .parallax-layer-base {
-  /*transform-origin: 0 0;*/
+  transform-origin: 0 0;
   -webkit-transform: translateZ(0);
   -moz-transform: translateZ(0);
   transform: translateZ(0);
   z-index: 2;
-  }
+}
+
 .parallax-layer-back {
-  /*transform-origin: 0 0;*/
+  transform-origin: 0 0;
   -webkit-transform: translateZ(-3px) scale(4);
   -moz-transform: translateZ(-3px) scale(4);
   transform: translateZ(-3px) scale(4);
   z-index: 3;
-  }
-/* untested */ 
-.parallax-layer-deep {
-  -webkit-transform: translateZ(-600px) scale(3);
-  transform: translateZ(-2px) scale(3);
-  z-index: 2;
-  }   
-
+}
 
 /* WELCOME SECTION */
+
 #welcome-section {
   height: 100vh;
   display: flex;
@@ -168,56 +158,62 @@ li a:hover {
   flex-direction: column;
   max-width: 40%;
 }
+
 #welcome-section h1 {
   font-size: 4.5em;
   letter-spacing: -3px;
   white-space: nowrap;
   line-height: 70px;
 }
+
 /* picture element gets squished to lower width than img */
-#welcome-section picture{
-  min-width: 490px; /* includes border and padding from img */
+
+#welcome-section picture {
+  min-width: 490px;
+  /* includes border and padding from img */
 }
+
 #welcome-section img {
   max-width: 30vw;
   min-width: 450px;
   height: auto;
-
   border-radius: 100%;
   padding: 10px;
   border: 10px solid #dde3c1;
   background-color: white;
-  
 }
 
 #chicagoskyline {
   width: 100%;
-  height: auto; /*keeps original aspect ratio */
-  transform: translateY(10px); /* gets rid of fusion line between image and projects section */
+  height: auto;
+  /*keeps original aspect ratio */
+  transform: translateY(10px);
+  /* gets rid of fusion line between image and projects section */
 }
 
-
 /* PROJECTS SECTION */
+
 #projects {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   border-radius: 0 0 50% 50% / 0 0 3% 3%;
   padding: 150px 0;
-  background-color: var(--black-green,#090d05);
+  background-color: var(--black-green, #090d05);
 }
+
 .project-tile {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background-color: var(--tile-color,#273028);
-  color: var(--gray-green,#90a872);
+  background-color: var(--tile-color, #273028);
+  color: var(--gray-green, #90a872);
   max-width: 400px;
   margin: 15px;
   padding: 10px;
-
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
+
 .project-tile-img {
   height: auto;
   min-height: 200px;
@@ -225,30 +221,36 @@ li a:hover {
   max-width: 400px;
   background-color: gray;
 }
+
 .project-tile-img img {
   width: 100%;
   height: 100%;
-}   
-.project-tile-tags{
+}
+
+.project-tile-tags {
   padding: 1em;
 }
-.project-tile-body{
+
+.project-tile-body {
   padding: 1em;
 }
-.project-tile-description{
+
+.project-tile-description {
   padding: 1em 0;
 }
+
 #projects a:hover {
   color: green;
-  box-shadow: 0 4px 15px -1px var(--yellow-green,#d7e360);
+  box-shadow: 0 4px 15px -1px var(--yellow-green, #d7e360);
   transition: 100ms;
 }
+
 #projects a {
   text-decoration: none;
-} 
-
+}
 
 /* CONTACT SECTION */
+
 #contact {
   min-height: 200px;
   background-color: #f5f7eb;
@@ -256,4 +258,3 @@ li a:hover {
   justify-content: space-evenly;
   align-items: center;
 }
-
