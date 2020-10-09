@@ -1,5 +1,12 @@
+<!--
+    NOTES
+
+    Parallax Simplification based on Performant Parallaxing (Paul Lewis, Robert Flack)
+-->
+
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <script src="https://kit.fontawesome.com/9432c5c737.js" crossorigin="anonymous"></script>
@@ -17,10 +24,21 @@
     <title>Raymond's Portfolio</title>
     <meta name="description" content="Raymond's Portfolio">
     <meta name="author" content="Raymond Hruby II">
+
+    <script type="text/javascript">
+        function setParallaxHeight() {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+
+        window.addEventListener('resize', setParallaxHeight);
+        window.addEventListener('orientationchange', setParallaxHeight);
+    </script>
 </head>
 
 <body>
-    <div class="parallax">
+    <div class="parallax-container">
+        <div id="welcome-top-anchor"></div>
         <nav id="navbar">
             <ul>
                 <li><a href="#welcome-top-anchor">About</a></li>
@@ -28,39 +46,31 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-        <div id="welcome-top-anchor"></div>
-        <div class="parallax-group" style="height:100vh;">
-            <section id="welcome-section" class="parallax-layer parallax-layer-back">
-                <header>
-                    <h1>WELCOME<br>I'M RAYMOND</h1>
-                    <p>Aspiring Software Developer in Chicago, Illinois. I speak a lot of (programming) languages.</p>
-                </header>
+        <section id="welcome-section" class="parallax-layer-back">
+            <header>
+                <h1>WELCOME<br>I'M RAYMOND</h1>
+                <p>Aspiring Software Developer in Chicago, Illinois. I speak a lot of (programming) languages.</p>
+            </header>
+            <picture>
+                <source type="image/webp"
+                    srcset="images/profile0square-786w.webp 1x, images/profile0square-1024w.webp 2x">
+                <img src="images/profile0square-786w.png" srcset="images/profile0square-1024w 2x" alt="Profile Image">
+            </picture>
+        </section>
 
-                
-                    <picture>
-                        <source type="image/webp" srcset="images/profile0square-786w.webp 1x, images/profile0square-1024w.webp 2x">
-                        <img src="images/profile0square-786w.png" srcset="images/profile0square-1024w 2x" alt="Profile Image">
-                    </picture>
-                
-                
-                <!--
-                    <img src="images/profile0square-786w.png" srcset="images/profile0square-1024w 2x" alt="Profile Image">
-                -->
-            </section>
+        <div class="parallax-layer-base">
+            <img id="chicagoskyline" src="images/chicagopixelbgw.png" alt="Chicago Skyline in Black and White">
         </div>
 
-        <div class="parallax-group">
-            <div class="parallax-layer parallax-layer-base">
-                <img id="chicagoskyline" src="images/chicagopixelbgw.png" alt="Chicago Skyline in Black and White">
-            </div>
-        </div>
-        
         <section id="projects" class="layer-base">
             <a class="project-tile" href="https://github.com/rhruby2/rhruby2.github.io" target="_blank">
                 <div class="project-tile-img">
                     <picture>
-                        <source type="image/webp" srcset="images/rhruby2githubio-screenshot-786w.webp 1x, images/rhruby2githubio-screenshot-1024w.webp 2x">
-                        <img src="images/rhruby2githubio-screenshot-480w.png" srcset="images/rhruby2githubio-screenshot-786w.png 1x, images/rhruby2githubio-screenshot-1024w.png 2x" alt="Screenshot of current webpage">
+                        <source type="image/webp"
+                            srcset="images/rhruby2githubio-screenshot-786w.webp 1x, images/rhruby2githubio-screenshot-1024w.webp 2x">
+                        <img src="images/rhruby2githubio-screenshot-480w.png"
+                            srcset="images/rhruby2githubio-screenshot-786w.png 1x, images/rhruby2githubio-screenshot-1024w.png 2x"
+                            alt="Screenshot of current webpage">
                     </picture>
                 </div>
                 <p class="project-tile-tags">HTML | CSS</p>
@@ -75,9 +85,10 @@
             <a class="project-tile" href="https://codepen.io/rhruby2/full/OJMgWBd" target="_blank">
                 <div class="project-tile-img">
                     <picture>
-                        <source type="image/webp" srcset="images/choropleth-786w.webp 1x, images/choropleth-1024w.webp 2x">
-                        <img src="images/choropleth-480w.png" 
-                            srcset="images/choropleth-786w.png 1x, images/choropleth-1024w.png 2x" 
+                        <source type="image/webp"
+                            srcset="images/choropleth-786w.webp 1x, images/choropleth-1024w.webp 2x">
+                        <img src="images/choropleth-480w.png"
+                            srcset="images/choropleth-786w.png 1x, images/choropleth-1024w.png 2x"
                             alt="United States Choropleth Map screenshot">
                     </picture>
                 </div>
@@ -94,8 +105,8 @@
                 <div class="project-tile-img">
                     <picture>
                         <source type="image/webp" srcset="images/pomodoro-786w.webp 1x, images/pomodoro-1024w.webp 2x">
-                        <img src="images/pomodoro-480w.png" 
-                            srcset="images/pomodoro-786w.png 1x, images/pomodoro-1024w.png 2x" 
+                        <img src="images/pomodoro-480w.png"
+                            srcset="images/pomodoro-786w.png 1x, images/pomodoro-1024w.png 2x"
                             alt="Pomodoro Clock screenshot">
                     </picture>
                 </div>
@@ -111,9 +122,10 @@
             <a class="project-tile" href="https://github.com/rhruby2/Project-X" target="_blank">
                 <div class="project-tile-img">
                     <picture>
-                        <source type="image/webp" srcset="images/projectXMap-786w.webp 1x, images/projectXMap-1024w.webp 2x">
-                        <img src="images/projectXMap-480w.png" 
-                            srcset="images/projectXMap-786w.png 1x, images/projectXMap-1024w.png 2x" 
+                        <source type="image/webp"
+                            srcset="images/projectXMap-786w.webp 1x, images/projectXMap-1024w.webp 2x">
+                        <img src="images/projectXMap-480w.png"
+                            srcset="images/projectXMap-786w.png 1x, images/projectXMap-1024w.png 2x"
                             alt="Chicago Beach Water Quality Map Screenshot">
                     </picture>
                 </div>
@@ -129,8 +141,11 @@
             <a class="project-tile" href="https://github.com/rhruby2/Every-Day-Is-Halloween-VR" target="_blank">
                 <div class="project-tile-img">
                     <picture>
-                        <source type="image/webp" srcset="images/p2hrubyhuynh-768w.webp 1x, images/p2hrubyhuynh-1024w.webp 2x">
-                        <img src="images/p2hrubyhuynh-480w.png" srcset="images/p2hrubyhuynh-768w.png 1x, images/p2hrubyhuynh-1024w.png 2x" alt="Profile Image">
+                        <source type="image/webp"
+                            srcset="images/p2hrubyhuynh-768w.webp 1x, images/p2hrubyhuynh-1024w.webp 2x">
+                        <img src="images/p2hrubyhuynh-480w.png"
+                            srcset="images/p2hrubyhuynh-768w.png 1x, images/p2hrubyhuynh-1024w.png 2x"
+                            alt="Profile Image">
                     </picture>
                 </div>
                 <p class="project-tile-tags">Unity3D | C# | SteamVR</p>
@@ -145,10 +160,11 @@
             <a class="project-tile" href="https://github.com/nsakhnini/senior-society" target="_blank">
                 <div class="project-tile-img">
                     <picture>
-                        <source type="image/webp" srcset="images/seniorSocietyLandingPage-786w.webp 1x, images/seniorSocietyLandingPage-1024w.webp 2x">
-                        <img src="images/seniorSocietyLandingPage-480w.png" 
-                        srcset="images/seniorSocietyLandingPage-786w.png 1x, images/seniorSocietyLandingPage-1024w.png 2x" 
-                        alt="Senior Society landing page screenshot">
+                        <source type="image/webp"
+                            srcset="images/seniorSocietyLandingPage-786w.webp 1x, images/seniorSocietyLandingPage-1024w.webp 2x">
+                        <img src="images/seniorSocietyLandingPage-480w.png"
+                            srcset="images/seniorSocietyLandingPage-786w.png 1x, images/seniorSocietyLandingPage-1024w.png 2x"
+                            alt="Senior Society landing page screenshot">
                     </picture>
                 </div>
                 <p class="project-tile-tags">HTML | JS | JQuery | CSS</p>
@@ -163,9 +179,10 @@
             <a class="project-tile" href="https://github.com/dgh0st/nerd" target="_blank">
                 <div class="project-tile-img">
                     <picture>
-                        <source type="image/webp" srcset="images/CS342ProjectNerd-786w.webp 1x, images/CS342ProjectNerd-1024w.webp 2x">
-                        <img src="images/CS342ProjectNerd-480w.png" 
-                            srcset="images/CS342ProjectNerd-786w.png 1x, images/CS342ProjectNerd-1024w.png 2x" 
+                        <source type="image/webp"
+                            srcset="images/CS342ProjectNerd-786w.webp 1x, images/CS342ProjectNerd-1024w.webp 2x">
+                        <img src="images/CS342ProjectNerd-480w.png"
+                            srcset="images/CS342ProjectNerd-786w.png 1x, images/CS342ProjectNerd-1024w.png 2x"
                             alt="Nerd project screenshot">
                     </picture>
                 </div>
@@ -187,9 +204,9 @@
                 </a>
                 <p>GITHUB</p>
             </div>
-    
+
             <h1>CONTACT ME HERE</h1>
-    
+
             <div class="icon">
                 <a href="https://www.linkedin.com/in/rhii/" target="_blank">
                     <i class="fab fa-linkedin-in fa-7x"></i>
@@ -199,4 +216,5 @@
     </div>
 
 </body>
+
 </html>
