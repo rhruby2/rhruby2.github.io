@@ -1,3 +1,2 @@
 # rhruby2.github.io
-
-Portfolio Showcase Webpage
+A Portfolio Showcase Webpage
