@@ -1,241 +1,332 @@
-/*
-https://stackoverflow.com/questions/3858466/css-expanding-based-on-portrait-or-landscape-screen-size
-
-TODO: orientation css only looks at ratio between width and height, therefore need to make desktop portrait media query (bigger width)
-*/
-
-
-/* 
-white green         #f5f7eb 
-gray green          #90a872 
-light gray green    #dde3c1 
-black green         #090d05
-*/
-
 * {
-    /*sizing includes borders*/
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-size: 16px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /*moved from body. workes here with parallax implentation*/
+  scroll-behavior: smooth;
 }
 
-html,
+/* highlighting theme */
+::-moz-selection {
+  color: green;
+  background-color: #d7e360;
+  opacity: 0.5;
+  /*text-shadow: 0px 0px 1px black*/
+}
+::selection {
+  color: green;
+  background-color: #d7e360;
+  opacity: 0.5;
+  /*text-shadow: 0px 0px 1px black*/
+}
+
 body {
-    background-color: #f5f7eb;
-    font-family: Poppins, Arial, sans-serif;
-    scroll-behavior: smooth;
-    color: #90a872;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
+  font-size: 16px;
+  width: 100%;
+  height: 100vh;
+  background-color: #f5f7eb;
+  color: #90a872;
+  font-family: Poppins, Arial, sans-serif;
 }
 
-
-/* ALL OTHERS */
-
-@media only screen {
-    h1{
-        font-size: 3.5em;
-    }
-    p{
-        font-size: 1.4em;
-    }
-
-    hr{
-        border-width: 1px;
-        color: #090d05;
-        background-color: #090d05;
-        height: 1px;
-        width: 100%;
-    }
-
-    /* fixes other anchors not in nav */
-    a {
-        position: relative;
-        text-decoration: none;
-    }
-    /* ICONS */
-    .icon {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .icon a {
-        /* changes size of child icon <i> */
-        font-size: 1.8em;
-    }
-    i {
-        color: #90a872;
-        /*i uses font-size: inherit; */
-    }
-    i:hover {
-        color: #d7e360;
-        transition: 600ms;
-    }
-    .icon:hover {
-        color: green;
-        transition: 600ms;
-    }
-    .icon p {
-        font-size: 2em;
-        letter-spacing: 4px;
-    }
-    /*WELCOME SECTION*/
-    #welcome-section {
-        height: 100vh;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        padding: 30px;
-    }
-    #welcome-section header {
-        padding-left: 0px;
-        padding-right: 0px;
-        display: flex;
-        flex-direction: column;
-    }
-    #welcome-section h1 {
-        margin: 0;
-        padding: 0;
-        font-size: 8em;
-        letter-spacing: -3px;
-        white-space: nowrap;
-        line-height: 1em;
-    }
-    #welcome-section p {
-        font-size: 2.5em;
-    }
-    #welcome-section img {
-        width: 100%;
-        height: auto;
-        /* keeps original aspect ratio */
-        max-width: 70%;
-        min-width: 350px;
-        padding: 10px;
-        border-radius: 100%;
-        margin-left: 30%;
-        /* 100% - max-width */
-        border: 10px solid #dde3c1;
-        background-color: white;
-    }
-
-    #chicagoskyline {
-        width: 100%;
-        height: auto; /*keeps original aspect ratio */
-        transform: translateY(10px); /* gets rid of fusion line between image and projects section */
-    }
-
-    /* Navigation */
-    #navbar {
-        width: 100%;
-        height: 100%;
-        position: sticky;
-        /* FCC REQ navbar to be at top*/
-        top: 0;
-        z-index: 10;
-        /*to stay on top of horizontal bar */
-    }
-    ul {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        margin: 0;
-        padding: 0;
-        list-style-type: none;
-        overflow: hidden;
-        background-color: #090d05;
-        box-shadow: 0px 5px 20px 4px rgba(0, 0, 0, 0.2);
-    }
-    li {
-        /*so anchors can take up all extra space*/
-        width: 100%;
-        height: 100%;
-    }
-    li a {
-        text-decoration: none;
-        color: snow;
-        /*text color*/
-        display: flex;
-        justify-content: center;
-        padding: 20px;
-        font-size: 2.5em;
-    }
-    li a:hover {
-        background-color: #d7e360;
-        color: green;
-        transition: 400ms;
-    }
-    /*PROJECTS SECTION*/
-    #projects {
-        display: flex;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
-        background-color: #090d05;
-        border-radius: 0 0 50% 50% / 0 0 3% 3%;
-        overflow: hidden;
-        padding-top: 150px;
-        padding-bottom: 150px;
-    }
-    #projects a:hover {
-        color: green;
-        box-shadow: 0 4px 15px -1px #d7e360;
-        transition: 100ms;
-    }
-    #projects a {
-        text-decoration: none;
-    }
-    .project-tile {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        width: 80%;
-
-        background-color: #273028;
-        color: #90a872;
-        margin: 25px;
-        padding: 20px;
-        
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    }
-    .project-tile-img {
-        height: auto;
-        width: 100%;
-        background-color: gray;
-    }
-    .project-tile-img img {
-        width: 100%;
-        height: 100%;
-    }
-    .project-tile-tags{
-        padding-top: 15px;
-        padding-bottom: 15px;
-      }
-    .project-tile-body{
-        padding-top: 15px;
-        padding-bottom: 15px;
-    }
-    .project-tile-description{
-        padding-top: 15px;
-        padding-bottom: 15px;
-    }
-    
-    #contact {
-        min-height: 50vh;
-        width: 100%;
-        background-color: #f5f7eb;
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-    }
-    #contact h1 {
-        font-size: 2.5em;
-    }
+h1 {
+  font-size: 1.5em;
 }
+
+hr {
+  border-width: 0px;
+  color: #090d05;
+  background-color: #090d05;
+  width: 100%;
+  height: 1px;
+}
+
+/* PARALLAX */
+/*translate moves image back in z index, while scale returns it to original size.*/
+/*Scale Factor:  1 + (translateZ * -1) / perspective    (Keith Clark)*/
+/* OR (perspective-distance) / perspective    (Performant Parallaxing)*/
+/* for content sections not in parallax groups */
+.layer-base {
+  /* necessary addition from parallax to disallow background peekthrough */
+  position: relative;
+  /* most likely also neccessary */
+  z-index: 2;
+}
+
+.parallax-container {
+  width: 100%;
+  height: 100%;
+  /* to achieve accurate viewport height */
+  height: calc(var(--vh, 1vh) * 100);
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-perspective-origin: 0 0;
+          perspective-origin: 0 0;
+  -webkit-perspective: 1px;
+          perspective: 1px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.parallax-layer-base {
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  z-index: 2;
+}
+
+.parallax-layer-back {
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: translateZ(-3px) scale(4);
+          transform: translateZ(-3px) scale(4);
+  z-index: 0;
+}
+
+/* NAVIGATION BAR */
+#navbar {
+  width: 100%;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+#navbar ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  list-style-type: none;
+  overflow: hidden;
+  background-color: #090d05;
+  -webkit-box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.3);
+}
+
+#navbar li {
+  /* so anchors can take up all extra space */
+  width: 100%;
+  height: 100%;
+}
+
+#navbar li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0.5em;
+  font-size: 1em;
+  text-decoration: none;
+  color: snow;
+  /* transition from hover*/
+  -webkit-transition: All 600ms ease;
+  transition: All 600ms ease;
+}
+
+#navbar li a:hover {
+  background-color: #d7e360;
+  color: green;
+  /* transition to hover*/
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+/* WELCOME SECTION */
+#welcome-section {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /*picture element gets squished to lower width than img, therefore defining width */
+  /* todo: https://stackoverflow.com/questions/27829250/child-margin-doesnt-affect-parent-height */
+}
+
+#welcome-section header {
+  width: 100%;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#welcome-section h1 {
+  font-size: 3.3em;
+  letter-spacing: -3px;
+  /* to keep from breaking to new line */
+  white-space: nowrap;
+  line-height: 70px;
+}
+
+#welcome-section picture {
+  overflow: auto;
+  padding: 10px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+#welcome-section picture img {
+  height: auto;
+  width: 80vw;
+  border-radius: 50%;
+  padding: 6px;
+  border: 6px solid #dde3c1;
+  background-color: white;
+}
+
+#chicagoskyline {
+  width: 198%;
+  /* keeps original aspect ratio */
+  height: auto;
+  /* gets rid of fusion line between image and projects section */
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+}
+
+/* PROJECTS SECTION */
+#projects {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  border-radius: 0 0 50% 50% / 0 0 1% 1%;
+  background-color: #090d05;
+}
+
+.project-tile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  background-color: #273028;
+  text-decoration: none;
+  color: #90a872;
+  max-width: 400px;
+  margin: 15px;
+  padding: 10px;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-position: 0 0;
+  /* transition */
+  -webkit-transition: All 800ms ease;
+  transition: All 800ms ease;
+}
+
+.project-tile .project-tile-img {
+  height: auto;
+  min-height: 200px;
+  max-height: 300px;
+  max-width: 400px;
+  background-color: gray;
+}
+
+.project-tile .project-tile-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.project-tile .project-tile-tags {
+  padding: 1em;
+}
+
+.project-tile .project-tile-body {
+  padding: 1em;
+}
+
+.project-tile .project-tile-description {
+  padding: 1em 0;
+}
+
+.project-tile:hover {
+  color: green;
+  -webkit-box-shadow: 0 4px 15px -1px var(--yellow-green, #d7e360);
+          box-shadow: 0 4px 15px -1px var(--yellow-green, #d7e360);
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+  -webkit-transition: 100ms;
+  transition: 100ms;
+}
+
+/* CONTACT SECTION */
+#contact {
+  min-height: 200px;
+  background-color: #f5f7eb;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#contact .icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  letter-spacing: 4px;
+  -webkit-transition: All 800ms ease;
+  transition: All 800ms ease;
+}
+
+#contact .icon:hover {
+  color: green;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+#contact i {
+  color: #90a872;
+  -webkit-transition: All 800ms ease;
+  transition: All 800ms ease;
+}
+
+#contact i:hover {
+  color: #d7e360;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+/*# sourceMappingURL=portrait.css.map */
