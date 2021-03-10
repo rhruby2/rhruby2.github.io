@@ -27,7 +27,7 @@ body {
   height: 100%;
   background-color: #f5f7eb;
   color: #90a872;
-  font-family: Poppins, Arial, sans-serif;
+  font-family: 'Poppins', Arial, sans-serif;
 }
 
 h1 {
@@ -105,8 +105,9 @@ hr {
   list-style-type: none;
   overflow: hidden;
   background-color: #090d05;
-  -webkit-box-shadow: 0px 5px 20px 4px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 5px 20px 4px rgba(0, 0, 0, 0.2);
+  /* x | y| blur-rad | spread-rad | color */
+  -webkit-box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 #navbar li {
@@ -122,8 +123,8 @@ hr {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 20px;
-  font-size: 1.2em;
+  padding: 0.5em;
+  font-size: 1em;
   text-decoration: none;
   color: snow;
   /* transition from hover*/
@@ -141,6 +142,7 @@ hr {
 
 /* WELCOME SECTION */
 #welcome-section {
+  padding-top: 30px;
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -149,13 +151,9 @@ hr {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 10px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   /*picture element gets squished to lower width than img, therefore defining min-width */
   /* todo: https://stackoverflow.com/questions/27829250/child-margin-doesnt-affect-parent-height */
 }
@@ -169,28 +167,41 @@ hr {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  max-width: 40%;
 }
 
-#welcome-section h1 {
-  font-size: 4.5em;
-  letter-spacing: -3px;
+#welcome-section header h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
+  font-size: 8vw;
+  letter-spacing: -2px;
   /* to keep from breaking to new line */
   white-space: nowrap;
-  line-height: 70px;
+  line-height: 1em;
+  padding-bottom: 10px;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+#welcome-section header p {
+  max-width: 50vw;
 }
 
 #welcome-section picture {
-  min-width: 490px;
+  overflow: auto;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  padding: 10px;
+  -webkit-transform: translate(10vw, 15vh);
+          transform: translate(10vw, 15vh);
 }
 
 #welcome-section picture img {
-  max-width: 30vw;
-  min-width: 450px;
+  display: block;
   height: auto;
+  width: 45vw;
   border-radius: 50%;
-  padding: 10px;
-  border: 10px solid #dde3c1;
+  padding: 6px;
+  border: 6px solid #dde3c1;
   background-color: white;
 }
 
@@ -213,8 +224,9 @@ hr {
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  border-radius: 0 0 50% 50% / 0 0 3% 3%;
-  padding: 150px 0;
+  border-radius: 0 0 50% 50% / 0 0 1% 1%;
+  padding-top: 2em;
+  padding-bottom: 5em;
   background-color: #090d05;
 }
 
@@ -258,10 +270,17 @@ hr {
 
 .project-tile .project-tile-tags {
   padding: 1em;
+  font-size: 0.8em;
+  letter-spacing: 3px;
+  text-transform: uppercase;
 }
 
 .project-tile .project-tile-body {
   padding: 1em;
+}
+
+.project-tile .project-tile-header {
+  font-family: 'Playfair Display', serif;
 }
 
 .project-tile .project-tile-description {
@@ -280,7 +299,7 @@ hr {
 
 /* CONTACT SECTION */
 #contact {
-  min-height: 200px;
+  min-height: 50vh;
   background-color: #f5f7eb;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -307,6 +326,17 @@ hr {
   letter-spacing: 4px;
   -webkit-transition: All 800ms ease;
   transition: All 800ms ease;
+}
+
+#contact .icon a {
+  /* changes size of child icon <i> */
+  font-size: 0.8em;
+}
+
+#contact .icon p {
+  font-size: 0.8em;
+  letter-spacing: 3px;
+  text-transform: uppercase;
 }
 
 #contact .icon:hover {

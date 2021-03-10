@@ -14,7 +14,7 @@ body
     height: 100%
     background-color: $white-green
     color: $gray-green
-    font-family: Poppins, Arial, sans-serif
+    font-family: 'Poppins', Arial, sans-serif
 
 h1
     font-size: 1.5em
@@ -76,7 +76,8 @@ hr
         list-style-type: none
         overflow: hidden
         background-color: $black-green
-        box-shadow: 0px 5px 20px 4px rgba(0, 0, 0, 0.2)
+        /* x | y| blur-rad | spread-rad | color
+        box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2)
 
     li
         /* so anchors can take up all extra space */
@@ -86,8 +87,8 @@ hr
         a
             display: flex
             justify-content: center
-            padding: 20px
-            font-size: 1.2em
+            padding: 0.5em
+            font-size: 1em
             text-decoration: none
             color: snow
 
@@ -102,38 +103,47 @@ hr
 
 /* WELCOME SECTION */
 #welcome-section
+    padding-top: 30px
     height: 100vh
     display: flex
     flex-direction: row
-    justify-content: space-evenly
-    align-items: center
-    padding: 10px
+    justify-content: space-between
 
     header
         padding: 10px
         display: flex
         flex-direction: column
-        max-width: 40%
 
-    h1
-        font-size: 4.5em
-        letter-spacing: -3px
-        /* to keep from breaking to new line */
-        white-space: nowrap
-        line-height: 70px
+        h1
+            font-family: 'Playfair Display', serif
+            font-weight: bold
+            font-size: 8vw
+            letter-spacing: -2px
+            /* to keep from breaking to new line */
+            white-space: nowrap
+            line-height: 1em
+            padding-bottom: 10px
+            align-self: flex-start
+        
+        p
+            max-width: 50vw
+
 
     /*picture element gets squished to lower width than img, therefore defining min-width */
     /* todo: https://stackoverflow.com/questions/27829250/child-margin-doesnt-affect-parent-height */
     picture
-        min-width: $header-img-min-width + 40px
+        overflow: auto
+        align-self: flex-end
+        padding: 10px
+        transform: translate(10vw, 15vh)
 
         img
-            max-width: 30vw
-            min-width: 450px
+            display: block
             height: auto
+            width: 45vw
             border-radius: 50%
-            padding: 10px
-            border: 10px solid $light-gray-green
+            padding: 6px
+            border: 6px solid $light-gray-green
             background-color: white
 
 #chicagoskyline
@@ -148,8 +158,9 @@ hr
     display: flex
     justify-content: center
     flex-wrap: wrap
-    border-radius: 0 0 50% 50% / 0 0 3% 3%
-    padding: 150px 0
+    border-radius: 0 0 50% 50% / 0 0 1% 1%
+    padding-top: 2em
+    padding-bottom: 5em
     background-color: $black-green
 
 .project-tile
@@ -182,9 +193,15 @@ hr
 
     #{&}-tags
         padding: 1em
+        font-size: 0.8em
+        letter-spacing: 3px
+        text-transform: uppercase
 
     #{&}-body
         padding: 1em
+
+    #{&}-header
+        font-family: 'Playfair Display', serif
 
     #{&}-description
         padding: 1em 0
@@ -197,7 +214,7 @@ hr
 
 /* CONTACT SECTION */
 #contact
-    min-height: 200px
+    min-height: 50vh
     background-color: $white-green
     display: flex
     justify-content: space-evenly
@@ -210,6 +227,15 @@ hr
         letter-spacing: 4px
 
         transition: All 800ms ease
+
+        a
+            /* changes size of child icon <i> */
+            font-size: 0.8em
+
+        p
+            font-size: 0.8em
+            letter-spacing: 3px
+            text-transform: uppercase
     
     .icon:hover
         color: green

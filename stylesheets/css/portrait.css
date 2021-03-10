@@ -228,6 +228,8 @@ hr {
       flex-wrap: wrap;
   border-radius: 0 0 50% 50% / 0 0 1% 1%;
   background-color: #090d05;
+  padding-top: 4em;
+  padding-bottom: 6em;
 }
 
 .project-tile {
