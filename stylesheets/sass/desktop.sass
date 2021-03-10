@@ -124,10 +124,12 @@ hr
 
     /*picture element gets squished to lower width than img, therefore defining min-width */
     /* todo: https://stackoverflow.com/questions/27829250/child-margin-doesnt-affect-parent-height */
+    /* https://stackoverflow.com/questions/38361657/why-does-my-html5-picture-have-a-height-outside-of-its-img-and-why-does-it-n */
+    
+    
     picture
-        min-width: $header-img-min-width + 40px
-
         img
+            display: block
             max-width: 30vw
             min-width: 450px
             height: auto
