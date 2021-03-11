@@ -173,12 +173,18 @@ hr {
   max-width: 40%;
 }
 
-#welcome-section h1 {
-  font-size: 4.5em;
-  letter-spacing: -3px;
+#welcome-section header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: calc(1em + 4vw);
+  letter-spacing: -2px;
   /* to keep from breaking to new line */
   white-space: nowrap;
-  line-height: 70px;
+  line-height: calc(0.8em + 1vh);
+  padding-bottom: 10px;
+}
+
+#welcome-section header p {
+  font-size: calc(0.2em + 1vw);
 }
 
 #welcome-section picture img {
@@ -256,10 +262,17 @@ hr {
 
 .project-tile .project-tile-tags {
   padding: 1em;
+  font-size: 0.8em;
+  letter-spacing: 3px;
+  text-transform: uppercase;
 }
 
 .project-tile .project-tile-body {
   padding: 1em;
+}
+
+.project-tile .project-tile-header {
+  font-family: 'Playfair Display', serif;
 }
 
 .project-tile .project-tile-description {

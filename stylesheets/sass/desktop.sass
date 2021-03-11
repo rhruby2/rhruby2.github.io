@@ -115,12 +115,18 @@ hr
         flex-direction: column
         max-width: 40%
 
-    h1
-        font-size: 4.5em
-        letter-spacing: -3px
-        /* to keep from breaking to new line */
-        white-space: nowrap
-        line-height: 70px
+        h1
+            font-family: 'Playfair Display', serif
+            font-size: calc(1em + 4vw)
+            letter-spacing: -2px
+            /* to keep from breaking to new line */
+            white-space: nowrap
+            line-height: calc(0.8em + 1vh)
+            padding-bottom: 10px
+
+        p   
+            font-size: calc(0.2em + 1vw)
+
 
     /*picture element gets squished to lower width than img, therefore defining min-width */
     /* todo: https://stackoverflow.com/questions/27829250/child-margin-doesnt-affect-parent-height */
@@ -184,9 +190,15 @@ hr
 
     #{&}-tags
         padding: 1em
+        font-size: 0.8em
+        letter-spacing: 3px
+        text-transform: uppercase
 
     #{&}-body
         padding: 1em
+
+    #{&}-header
+        font-family: 'Playfair Display', serif
 
     #{&}-description
         padding: 1em 0
