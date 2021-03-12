@@ -1,0 +1,237 @@
+@import './resets'
+@import './desktop-variables'
+
+/* highlighting theme */
+::selection
+    color: green
+    background-color: $yellow-green
+    opacity: 0.5
+    /*text-shadow: 0px 0px 1px black*/
+
+body
+    font-size: $main-font-size
+    width: 100%
+    height: 100%
+    background-color: $white-green
+    color: $gray-green
+    font-family: Poppins, Arial, sans-serif
+
+h1
+    font-size: 1.5em
+
+hr
+    border-width: 0px
+    color: $black-green
+    background-color: $black-green
+    width: 100%
+    height: 1px
+
+
+/* PARALLAX */
+
+/*translate moves image back in z index, while scale returns it to original size.*/
+
+/*Scale Factor:  1 + (translateZ * -1) / perspective    (Keith Clark)*/
+/* OR (perspective-distance) / perspective    (Performant Parallaxing)*/
+
+/* for content sections not in parallax groups */
+.layer-base 
+    /* necessary addition from parallax to disallow background peekthrough */
+    position: relative
+    /* most likely also neccessary */
+    z-index: 4 
+
+.parallax-container
+    width: 100%
+    height: 100%
+    /* to achieve accurate viewport height */
+    height: calc(var(--vh, 1vh) * 100)
+    overflow-x: hidden
+    overflow-y: scroll
+    perspective-origin: 0 0
+    perspective: 1px
+    transform-style: preserve-3d
+
+.parallax-layer-base
+    transform-origin: 0 0
+    transform: translateZ(0)
+    z-index: 2
+
+.parallax-layer-back
+    transform-origin: 0 0
+    transform: translateZ(-3px) scale(4)
+    z-index: 3
+
+
+/* NAVIGATION BAR */
+#navbar
+    width: 100%
+    position: sticky
+    top: 0
+    z-index: 10
+
+    ul
+        display: flex
+        flex-direction: row
+        list-style-type: none
+        overflow: hidden
+        background-color: $black-green
+        box-shadow: 0px 5px 20px 4px rgba(0, 0, 0, 0.2)
+
+    li
+        /* so anchors can take up all extra space */
+        width: 100%
+        height: 100%
+
+        a
+            display: flex
+            justify-content: center
+            padding: 20px
+            font-size: 1.2em
+            text-decoration: none
+            color: snow
+
+            /* transition from hover*/
+            transition: All 600ms ease
+
+        a:hover
+            background-color: $yellow-green
+            color: green
+            /* transition to hover*/
+            transition: 300ms
+
+/* WELCOME SECTION */
+#welcome-section
+    height: 100vh
+    display: flex
+    flex-direction: row
+    justify-content: space-evenly
+    align-items: center
+    padding: 10px
+
+    header
+        padding: 10px
+        display: flex
+        flex-direction: column
+        max-width: 40%
+
+        h1
+            color: $gray-green
+            font-family: 'Playfair Display', serif
+            font-size: calc(1em + 4vw)
+            letter-spacing: -2px
+            /* to keep from breaking to new line */
+            white-space: nowrap
+            line-height: calc(0.8em + 1vh)
+            padding-bottom: 10px
+
+        p   
+            font-size: calc(0.2em + 1vw)
+
+
+    /*picture element gets squished to lower width than img, therefore defining min-width */
+    /* todo: https://stackoverflow.com/questions/27829250/child-margin-doesnt-affect-parent-height */
+    /* https://stackoverflow.com/questions/38361657/why-does-my-html5-picture-have-a-height-outside-of-its-img-and-why-does-it-n */
+
+    img
+        display: block
+        width: 30vw
+        height: auto
+        padding: 0.4em
+        border: 0.4em solid $light-gray-green
+        border-radius: 50%
+        background-color: white
+
+#chicagoskyline
+    width: 100%
+    /* keeps original aspect ratio */
+    height: auto
+    /* gets rid of fusion line between image and projects section */
+    transform: translateY(10px)
+
+/* PROJECTS SECTION */
+#projects
+    display: flex
+    justify-content: center
+    flex-wrap: wrap
+    border-radius: 0 0 50% 50% / 0 0 3% 3%
+    padding: 150px 0
+    background-color: $black-green
+
+.project-tile
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    background-color: $tile-color
+    text-decoration: none
+    color: $gray-green
+    max-width: 400px
+    margin: 15px
+    padding: 10px
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
+
+    background-position: 0 0
+
+    /* transition */
+    transition: All 800ms ease
+
+    #{&}-img
+        height: auto
+        min-height: 200px
+        max-height: 300px
+        max-width: 400px
+        background-color: gray
+
+        img
+            width: 100%
+            height: 100%
+
+    #{&}-tags
+        padding: 1em
+        font-size: 0.8em
+        letter-spacing: 3px
+        text-transform: uppercase
+
+    #{&}-body
+        padding: 1em
+
+    #{&}-header
+        font-family: 'Playfair Display', serif
+
+    #{&}-description
+        padding: 1em 0
+
+.project-tile:hover
+    color: green
+    box-shadow: 0 4px 15px -1px var(--yellow-green, #d7e360)
+    transform: scale(1.02)
+    transition: 100ms
+
+/* CONTACT SECTION */
+#contact
+    min-height: 200px
+    background-color: $white-green
+    display: flex
+    justify-content: space-evenly
+    align-items: center
+
+    .icon
+        display: flex
+        flex-direction: column
+        align-items: center
+        letter-spacing: 4px
+
+        transition: All 800ms ease
+    
+    .icon:hover
+        color: green
+        transition: 200ms
+
+    i
+        color: $gray-green
+        transition: All 800ms ease
+
+    i:hover
+        color: $yellow-green
+        transition: 200ms
+
