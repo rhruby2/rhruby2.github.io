@@ -116,6 +116,7 @@ hr
         max-width: 40%
 
         h1
+            color: $gray-green
             font-family: 'Playfair Display', serif
             font-size: calc(1em + 4vw)
             letter-spacing: -2px
@@ -131,18 +132,15 @@ hr
     /*picture element gets squished to lower width than img, therefore defining min-width */
     /* todo: https://stackoverflow.com/questions/27829250/child-margin-doesnt-affect-parent-height */
     /* https://stackoverflow.com/questions/38361657/why-does-my-html5-picture-have-a-height-outside-of-its-img-and-why-does-it-n */
-    
-    
-    picture
-        img
-            display: block
-            max-width: 30vw
-            min-width: 450px
-            height: auto
-            border-radius: 50%
-            padding: 10px
-            border: 10px solid $light-gray-green
-            background-color: white
+
+    img
+        display: block
+        width: 30vw
+        height: auto
+        padding: 0.4em
+        border: 0.4em solid $light-gray-green
+        border-radius: 50%
+        background-color: white
 
 #chicagoskyline
     width: 100%

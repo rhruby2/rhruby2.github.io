@@ -57,11 +57,13 @@
                 <h1>WELCOME<br>I'M RAYMOND</h1>
                 <p>Aspiring Software Developer in Chicago, Illinois. I speak a lot of (programming) languages.</p>
             </header>
-            <picture>
-                <source type="image/webp"
-                    srcset="images/profile0square-786w.webp 1x, images/profile0square-1024w.webp 2x">
-                <img src="images/profile0square-786w.png" srcset="images/profile0square-1024w.png 2x" alt="Profile Image">
-            </picture>
+            
+            <img src="images/profile0square-786w.png" 
+                srcset="images/profile0square-786w.webp 786w, images/profile0square-1024w.webp 1024w"
+                sizes="(max-width: 420px) 80vw,
+                    (min-width: 421px) and (max-width: 825px) 90vh,
+                    (min-width: 826px) 30vw"
+                alt="Profile Image">
         </section>
 
         <div class="parallax-layer-base">

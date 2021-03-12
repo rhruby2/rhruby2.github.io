@@ -190,20 +190,16 @@ hr {
   max-width: 90%;
 }
 
-#welcome-section picture {
-  overflow: auto;
+#welcome-section img {
   -ms-flex-item-align: end;
       align-self: flex-end;
-  padding: 10px;
-}
-
-#welcome-section picture img {
+  margin: 10px;
   display: block;
+  width: 70vw;
   height: auto;
-  width: 80vw;
+  padding: 0.3em;
+  border: 0.3em solid #dde3c1;
   border-radius: 50%;
-  padding: 6px;
-  border: 6px solid #dde3c1;
   background-color: white;
 }
 

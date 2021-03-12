@@ -128,26 +128,20 @@ hr
         p
             max-width: 50vw
 
-
-    /*picture element gets squished to lower width than img, therefore defining min-width */
-    /* todo: https://stackoverflow.com/questions/27829250/child-margin-doesnt-affect-parent-height */
-    picture
-        overflow: auto
+    img
+        margin: 10px
         align-self: flex-end
-        padding: 10px
         transform: translate(10vw, 15vh)
-
-        img
-            display: block
-            height: auto
-            width: 45vw
-            border-radius: 50%
-            padding: 6px
-            border: 6px solid $light-gray-green
-            background-color: white
+        display: block
+        height: auto
+        width: 90vh
+        border-radius: 50%
+        padding: 6px
+        border: 6px solid $light-gray-green
+        background-color: white
 
 #chicagoskyline
-    width: 100%
+    width: 120%
     /* keeps original aspect ratio */
     height: auto
     /* gets rid of fusion line between image and projects section */
