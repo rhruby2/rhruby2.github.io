@@ -1,0 +1,165 @@
+{
+    "projects": [
+        {
+            "header": "rhruby2.github.io",
+            "description": "This webpage! A portfolio started from scratch.",
+            "tags": ["HTML", "SASS", "GIT"],
+            "link": "https://github.com/rhruby2/rhruby2.github.io",
+            "images": {
+                "directory": "images",
+                "webp": {
+                    "srcsetFileNames": [
+                        "rhruby2githubio-screenshot-786w.webp", 
+                        "rhruby2githubio-screenshot-1024w.webp"
+                    ]
+                },
+                "fallback": {
+                    "srcFileName": "rhruby2githubio-screenshot-480w.png",
+                    "srcsetFileNames": [
+                        "rhruby2githubio-screenshot-786w.png",
+                        "rhruby2githubio-screenshot-1024w.png"
+                    ]
+                },
+                "altText": "Screenshot of current webpage"
+            }
+        },
+        {
+            "header": "Choropleth Map",
+            "description": "A choropleth map of United States Educational Attainment", 
+            "tags": ["D3.js","AJAX","CSS"],
+            "link": "https://codepen.io/rhruby2/full/OJMgWBd",
+            "images": {
+                "directory": "images",
+                "webp": {
+                    "srcsetFileNames": [
+                        "choropleth-786w.webp",
+                        "choropleth-1024w.webp"
+                    ]
+                },
+                "fallback": {
+                    "srcFileName": "choropleth-480w.png",
+                    "srcsetFileNames": [
+                        "choropleth-786w.png",
+                        "choropleth-1024w.png"
+                    ]
+                },
+                "altText": "United States Choropleth Map screenshot"
+            }
+        },
+        {
+            "header": "Pomodoro Clock",
+            "description": "Productivity clock complete with a minimal design.", 
+            "tags": ["React.js","CSS"],
+            "link": "https://codepen.io/rhruby2/full/VwvMaoV",
+            "images": {
+                "directory": "images",
+                "webp": {
+                    "srcsetFileNames": [
+                        "pomodoro-786w.webp",
+                        "pomodoro-1024w.webp"
+                    ]
+                },
+                "fallback": {
+                    "srcFileName": "pomodoro-480w.png",
+                    "srcsetFileNames": [
+                        "pomodoro-786w.png",
+                        "pomodoro-1024w.png"
+                    ]
+                },
+                "altText": "Pomodoro Clock screenshot"
+            }
+        },
+        {
+            "header": "Beach Water Quality",
+            "description": "Analyzation of Chicago beach water quality.", 
+            "tags": ["Jupyter","R"],
+            "link": "https://github.com/rhruby2/Project-X",
+            "images": {
+                "directory": "images",
+                "webp": {
+                    "srcsetFileNames": [
+                        "projectXMap-786w.webp",
+                        "projectXMap-1024w.webp"
+                    ]
+                },
+                "fallback": {
+                    "srcFileName": "projectXMap-480w",
+                    "srcsetFileNames": [
+                        "projectXMap-786w.png",
+                        "projectXMap-1024w.png"
+                    ]
+                },
+                "altText": "Map Screenshot with colored nodes representing water quality"
+            }
+        },
+        {
+            "header": "Everyday is Halloween VR",
+            "description": "Halloween funhouse themed virtual reality project.", 
+            "tags": ["Unity3D","C#", "SteamVR"],
+            "link": "https://github.com/rhruby2/Every-Day-Is-Halloween-VR",
+            "images": {
+                "directory": "images",
+                "webp": {
+                    "srcsetFileNames": [
+                        "p2hrubyhuynh-768w.webp",
+                        "p2hrubyhuynh-1024w.webp"
+                    ]
+                },
+                "fallback": {
+                    "srcFileName": "p2hrubyhuynh-480w.png",
+                    "srcsetFileNames": [
+                        "p2hrubyhuynh-768w.png",
+                        "p2hrubyhuynh-1024w.png"
+                    ]
+                },
+                "altText": "Profile Image"
+            }
+        },
+        {
+            "header": "Senior Society",
+            "description": "Mockup social networking application designed for Seniors.", 
+            "tags": ["HTML","JS", "JQuery", "CSS"],
+            "link": "https://github.com/nsakhnini/senior-society",
+            "images": {
+                "directory": "images",
+                "webp": {
+                    "srcsetFileNames": [
+                        "seniorSocietyLandingPage-786w.webp",
+                        "seniorSocietyLandingPage-1024w.webp"
+                    ]
+                },
+                "fallback": {
+                    "srcFileName": "seniorSocietyLandingPage-480w.png",
+                    "srcsetFileNames": [
+                        "seniorSocietyLandingPage-786w.png",
+                        "seniorSocietyLandingPage-1024w.png"
+                    ]
+                },
+                "altText": "Senior Society landing page screenshot"
+            }
+        },
+        {
+            "header": "Nerd",
+            "description": "Video game incorporating software design principles.", 
+            "tags": ["Java", "Git"],
+            "link": "https://github.com/dgh0st/nerd",
+            "images": {
+                "directory": "images",
+                "webp": {
+                    "srcsetFileNames": [
+                        "CS342ProjectNerd-786w.webp",
+                        "CS342ProjectNerd-1024w.webp"
+                    ]
+                },
+                "fallback": {
+                    "srcFileName": "images/CS342ProjectNerd-480w.png",
+                    "srcsetFileNames": [
+                        "CS342ProjectNerd-786w.png",
+                        "CS342ProjectNerd-1024w.png"
+                    ]
+                },
+                "altText": "Project starting screen screenshot"
+            }
+        }
+    ]
+}
