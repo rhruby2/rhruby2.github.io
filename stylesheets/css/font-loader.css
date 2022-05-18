@@ -1,0 +1,18 @@
+/* IE9 Compat Modes, IE6-IE8, Modern Browsers, Safari, Android, iOS, Legacy iOS */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../fonts/playfair-display-v29-latin/playfair-display-v29-latin-regular.eot");
+  src: url("../../fonts/playfair-display-v29-latin/playfair-display-v29-latin-regular.eot?#iefix") format("embedded-opentype"), url("../../fonts/playfair-display-v29-latin/playfair-display-v29-latin-regular.woff2") format("woff2"), url("../../fonts/playfair-display-v29-latin/playfair-display-v29-latin-regular.woff") format("woff"), url("../../fonts/playfair-display-v29-latin/playfair-display-v29-latin-regular.ttf") format("truetype"), url("../../fonts/playfair-display-v29-latin/playfair-display-v29-latin-regular.svg#PlayfairDisplay") format("svg");
+}
+
+/* IE9 Compat Modes, IE6-IE8, Modern Browsers, Safari, Android, iOS, Legacy iOS */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../fonts/poppins-v20-latin/poppins-v20-latin-regular.eot");
+  src: url("../../fonts/poppins-v20-latin/poppins-v20-latin-regular.eot?#iefix") format("embedded-opentype"), url("../../fonts/poppins-v20-latin/poppins-v20-latin-regular.woff2") format("woff2"), url("../../fonts/poppins-v20-latin/poppins-v20-latin-regular.woff") format("woff"), url("../../fonts/poppins-v20-latin/poppins-v20-latin-regular.ttf") format("truetype"), url("../../fonts/poppins-v20-latin/poppins-v20-latin-regular.svg#PlayfairDisplay") format("svg");
+}
+/*# sourceMappingURL=font-loader.css.map */
