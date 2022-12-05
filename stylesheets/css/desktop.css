@@ -60,6 +60,10 @@ hr {
   height: 1px;
 }
 
+pre {
+  font-family: 'Courier New', Courier, monospace;
+}
+
 /* PARALLAX */
 /*translate moves image back in z index, while scale returns it to original size.*/
 /*Scale Factor:  1 + (translateZ * -1) / perspective    (Keith Clark)*/
@@ -101,6 +105,12 @@ hr {
   -webkit-transform: translateZ(-3px) scale(4);
           transform: translateZ(-3px) scale(4);
   z-index: 3;
+}
+
+/* ADDITIONS */
+/* outline used for project cards that have additional information to display on modal screen*/
+.outline {
+  outline: #90a872 solid 1px;
 }
 
 /* NAVIGATION BAR */
@@ -298,11 +308,144 @@ hr {
 }
 
 .project-tile:hover {
+  cursor: pointer;
   color: green;
   -webkit-box-shadow: 0 4px 15px -1px var(--yellow-green, #d7e360);
           box-shadow: 0 4px 15px -1px var(--yellow-green, #d7e360);
   -webkit-transform: scale(1.02);
           transform: scale(1.02);
+  -webkit-transition: 100ms;
+  transition: 100ms;
+}
+
+.modal {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  line-height: 2;
+}
+
+.modal .modal-content {
+  overflow: auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(10, 10, 10, 0.8);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  width: 70%;
+  height: 70%;
+  padding: 20px;
+}
+
+.modal .modal-close {
+  color: #d7e360;
+  float: right;
+  font-weight: bold;
+  padding: 5px 10px;
+  -webkit-transition: All 800ms ease;
+  transition: All 800ms ease;
+}
+
+.modal .modal-close:hover {
+  cursor: pointer;
+  color: green;
+  -webkit-transform: scale(2.2);
+          transform: scale(2.2);
+  -webkit-transition: 100ms;
+  transition: 100ms;
+}
+
+.modal .modal-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 3rem;
+}
+
+.modal .modal-description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 20px 10%;
+}
+
+.modal .modal-media {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 10px 0;
+}
+
+.modal .modal-gif {
+  height: auto;
+  width: 80%;
+  min-width: 400px;
+}
+
+.modal .modal-download-instructions {
+  padding: 10px 10%;
+}
+
+.modal .modal-download-instructions h3 {
+  padding-top: 10px;
+}
+
+.modal .modal-download-instructions ol li {
+  margin-left: 20px;
+}
+
+.modal .modal-download-instructions ol li pre {
+  color: #d7e360;
+}
+
+.modal .modal-link-source {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 10px 10%;
+}
+
+.modal .modal-link-source a {
+  color: #d7e360;
+  -webkit-transition: All 800ms ease;
+  transition: All 800ms ease;
+}
+
+.modal .modal-link-source a:hover {
+  color: green;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
   -webkit-transition: 100ms;
   transition: 100ms;
 }
