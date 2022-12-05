@@ -1,4 +1,6 @@
 {
+    "gif_directory": "media/gifs",
+    "images_directory": "media/images",
     "projects": [
         {
             "header": "rhruby2.github.io",
@@ -6,7 +8,7 @@
             "tags": ["HTML", "SASS", "GIT"],
             "link": "https://github.com/rhruby2/rhruby2.github.io",
             "images": {
-                "directory": "images",
+                "directory": "media/images",
                 "webp": {
                     "srcsetFileNames": [
                         "rhruby2githubio-screenshot-786w.webp", 
@@ -29,7 +31,7 @@
             "tags": ["D3.js","AJAX","CSS"],
             "link": "https://codepen.io/rhruby2/full/OJMgWBd",
             "images": {
-                "directory": "images",
+                "directory": "media/images",
                 "webp": {
                     "srcsetFileNames": [
                         "choropleth-786w.webp",
@@ -52,7 +54,7 @@
             "tags": ["React.js","CSS"],
             "link": "https://codepen.io/rhruby2/full/VwvMaoV",
             "images": {
-                "directory": "images",
+                "directory": "media/images",
                 "webp": {
                     "srcsetFileNames": [
                         "pomodoro-786w.webp",
@@ -75,7 +77,7 @@
             "tags": ["Jupyter","R"],
             "link": "https://github.com/rhruby2/Project-X",
             "images": {
-                "directory": "images",
+                "directory": "media/images",
                 "webp": {
                     "srcsetFileNames": [
                         "projectXMap-786w.webp",
@@ -98,7 +100,7 @@
             "tags": ["Unity3D","C#", "SteamVR"],
             "link": "https://github.com/rhruby2/Every-Day-Is-Halloween-VR",
             "images": {
-                "directory": "images",
+                "directory": "media/images",
                 "webp": {
                     "srcsetFileNames": [
                         "p2hrubyhuynh-768w.webp",
@@ -121,7 +123,7 @@
             "tags": ["HTML","JS", "JQuery", "CSS"],
             "link": "https://github.com/nsakhnini/senior-society",
             "images": {
-                "directory": "images",
+                "directory": "media/images",
                 "webp": {
                     "srcsetFileNames": [
                         "seniorSocietyLandingPage-786w.webp",
@@ -144,7 +146,7 @@
             "tags": ["Java", "Git"],
             "link": "https://github.com/dgh0st/nerd",
             "images": {
-                "directory": "images",
+                "directory": "media/images",
                 "webp": {
                     "srcsetFileNames": [
                         "CS342ProjectNerd-786w.webp",
@@ -159,6 +161,25 @@
                     ]
                 },
                 "altText": "Project starting screen screenshot"
+            },
+            "modal":{
+                "description": "Java interactive application with software design principles, object-oriented design, user testing, and requirements engineering focus.",
+                "gif": {
+                    "src": "media/gifs/nerd.gif"
+                },
+                "downloadInstructions": {
+                    "requirements": [
+                        "Source Code", 
+                        "Java JDK"
+                    ],
+                    "stepsToRunApplication": [
+                        "upzip Source Code into any folder", 
+                        "Open Command Prompt",
+                        "Navigate to the folder that contains the source code inside Command Prompt",
+                        "Run Command in Command Prompt: <pre><code>javac NerdGame.java</code></pre> to compile the application",
+                        "Run Command in Command Prompt: <pre><code>java NerdGame.java</code></pre> to start the application"
+                    ]
+                }
             }
         }
     ]

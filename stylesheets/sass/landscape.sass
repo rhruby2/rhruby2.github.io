@@ -64,6 +64,12 @@ hr
     z-index: 3
 
 
+/* ADDITIONS */
+/* outline used for project cards that have additional information to display on modal screen */
+.outline
+    outline: $gray-green solid 1px
+
+
 /* NAVIGATION BAR */
 #navbar
     width: 100%
@@ -139,7 +145,8 @@ hr
         border-radius: 50%
         padding: 6px
         border: 6px solid $light-gray-green
-        background-color: white
+
+            background-color: white
 
 #chicagoskyline
     width: 120%
@@ -206,6 +213,92 @@ hr
     box-shadow: 0 4px 15px -1px var(--yellow-green, #d7e360)
     transform: scale(1.02)
     transition: 100ms
+
+
+.modal
+    position: fixed
+    display: flex
+    z-index: 1 //Sit on top
+    width: 100%
+    height: 100%
+    overflow: auto //enable scroll if needed
+
+    justify-content: center
+    align-items: center
+
+    line-height: 2
+
+    #{&}-content
+        overflow: auto
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        background-color: rgba(10, 10, 10, .8)
+        backdrop-filter: blur(5px)
+
+        width: 90%
+        height: 90%
+        padding: 20px
+
+    #{&}-close
+        color: $yellow-green
+        float: right
+        font-weight: bold
+        padding: 5px 10px
+
+        transition: All 800ms ease
+
+    #{&}-close:hover
+        cursor: pointer 
+        color: green
+        transform: scale(2.2)
+        transition: 100ms
+        
+
+    #{&}-header
+        display: flex
+        justify-content: center
+        font-size: 3rem
+
+    #{&}-description
+        display: flex
+        justify-content: center
+
+        padding: 20px 10%
+
+    #{&}-media
+        display: flex
+        justify-content: center
+
+        padding: 10px 0
+
+    #{&}-gif
+        height: auto
+        width: 80%
+        min-width: 400px
+
+    #{&}-download-instructions
+        padding: 10px 10%
+
+        h3
+            padding-top: 10px
+
+    #{&}-link-source
+        display: flex
+        justify-content: center
+
+        padding: 10px 10%
+
+        a
+            color: $yellow-green
+
+            transition: All 800ms ease
+
+        a:hover 
+            color: green
+            transform: scale(1.2)
+            transition: 100ms
+
 
 /* CONTACT SECTION */
 #contact
