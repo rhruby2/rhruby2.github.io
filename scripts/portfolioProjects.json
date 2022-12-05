@@ -169,6 +169,7 @@
                 },
                 "downloadInstructions": {
                     "requirements": [
+                        "Command Prompt OR Terminal",
                         "Source Code", 
                         "Java JDK"
                     ],

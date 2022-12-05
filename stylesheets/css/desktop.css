@@ -64,10 +64,6 @@ pre {
   font-family: 'Courier New', Courier, monospace;
 }
 
-li {
-  margin-left: 30px;
-}
-
 /* PARALLAX */
 /*translate moves image back in z index, while scale returns it to original size.*/
 /*Scale Factor:  1 + (translateZ * -1) / perspective    (Keith Clark)*/
@@ -420,6 +416,14 @@ li {
 
 .modal .modal-download-instructions h3 {
   padding-top: 10px;
+}
+
+.modal .modal-download-instructions ol li {
+  margin-left: 20px;
+}
+
+.modal .modal-download-instructions ol li pre {
+  color: #d7e360;
 }
 
 .modal .modal-link-source {

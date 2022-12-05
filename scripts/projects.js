@@ -155,7 +155,7 @@ const createModalDownloadInstructions = (modalData) => {
     let stepsList = document.createElement('ol');
     modalData.downloadInstructions.stepsToRunApplication.forEach((item) => {
         let listItem = document.createElement('li');
-        listItem.innerText = item;
+        listItem.innerHTML = item;
 
         stepsList.appendChild(listItem);
     })

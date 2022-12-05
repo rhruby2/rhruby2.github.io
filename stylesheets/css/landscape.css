@@ -415,6 +415,10 @@ hr {
   padding-top: 10px;
 }
 
+.modal .modal-download-instructions ol li {
+  margin-left: 20px;
+}
+
 .modal .modal-link-source {
   display: -webkit-box;
   display: -ms-flexbox;
