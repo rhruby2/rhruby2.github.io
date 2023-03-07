@@ -76,12 +76,16 @@ const createProjectTile = (project, index) => {
 }
 
 const createAndShowModal = (event) => {
+    //TODO: change to bubbling up until project-tile
+
+    console.log("EVENT.TARGET");
     console.log(event.target);
     //search through event path to find parent project tile
     let projectTileIndex = getProjectTileIndex(event);
+    console.log("PROJECTTILELINDEX");
     console.log(projectTileIndex);
 
-    let projectTile = event.path[projectTileIndex];
+    let projectTile = event.composedPath()[projectTileIndex];
 
     //get id of project tile that should match JSON index
     let projectTileId = projectTile.getAttribute('id');
@@ -177,8 +181,8 @@ const createModalDownloadInstructions = (modalData) => {
  * @returns {Number} projectTileIndex
  */
 const getProjectTileIndex = (event) => {
-    for(let i = 0; i<event.path.length; i++){
-        let item = event.path[i];
+    for(let i = 0; i<event.composedPath().length; i++){
+        let item = event.composedPath()[i];
 
         if(item.classList.contains('project-tile')){
             console.log(i);
