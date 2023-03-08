@@ -9,24 +9,6 @@ console.log('loading index.js');
 //making global object to use for creating modals on click
 var PROJECT_DATA;
 
-
-/* wait until page load to add event listeners for modals*/
-window.addEventListener("load", () => {
-    let modal = document.querySelector(".modal");
-    console.log(modal);
-    let modalClose = document.querySelector(".modal-close");
-    console.log(modalClose);
-
-    window.onclick = (event) => {
-        if(event.target == modal){
-            modal.style.display = 'none';
-        }
-    }
-    modalClose.onclick = () => {
-        modal.style.display = 'none';
-    }
-})
-
 /* add in project data from JSON*/
 fetch('scripts/portfolioProjects.json')
     .then(response => response.json())
@@ -46,79 +28,44 @@ const createProjectsSection = (projects) => {
 const createProjectTile = (project, index) => {
     console.log(project.header);
 
-    let projectTile;
+    let projectTile = document.createElement('a');
+    projectTile.classList.add('project-tile');
+    projectTile.setAttribute('id', index);
 
     if(!project.modal){
-        projectTile = document.createElement('a');
         projectTile.setAttribute('href', project.link);
         projectTile.setAttribute('target','_blank');
     }
     //add distinct stylings and added functionality if modal content exists
     if(project.modal){
-        projectTile = document.createElement('a');
         projectTile.classList.add('outline');
         projectTile.addEventListener('click', (event) => {
             console.log(event);
-            createAndShowModal(event);
+            createModal(event);
         });
     }
 
-    projectTile.classList.add('project-tile');
-
-    projectTile.setAttribute('id', index);
-
-    projectTile.append(createProjectTileImage(project));
-    projectTile.append(createProjectTileTags(project));
-    projectTile.append(document.createElement('hr'));
-    projectTile.append(createProjectTileBody(project));
+    projectTile.append(
+        createProjectTileImage(project),
+        createProjectTileTags(project),
+        document.createElement('hr'),
+        createProjectTileBody(project)
+    );
 
     return projectTile;
 }
 
-const createAndShowModal = (event) => {
-    //TODO: change to bubbling up until project-tile
+const createModal = (event) => {
+    let projectData = getProjectData(event);
+    let modalData = projectData.modal;
 
-    console.log("EVENT.TARGET");
-    console.log(event.target);
-    //search through event path to find parent project tile
-    let projectTileIndex = getProjectTileIndex(event);
-    console.log("PROJECTTILELINDEX");
-    console.log(projectTileIndex);
-
-    let projectTile = event.composedPath()[projectTileIndex];
-
-    //get id of project tile that should match JSON index
-    let projectTileId = projectTile.getAttribute('id');
-    console.log(projectTileId);
-
-    let modalData = PROJECT_DATA[projectTileId].modal;
-
-    let modal = document.createElement('div');
-    modal.className= 'modal';
-    modal.innerHTML = `
-        <div class="modal-content">
-            <span class="modal-close">&times;</span>
-            <h1 class="modal-header">${PROJECT_DATA[projectTileId].header}</h1>
-            <p class="modal-description">${modalData.description}</p>
-            <div class="modal-media">
-                <img class="modal-gif" src=${modalData.gif.src}>
-            </div>
-            
-            <div class="modal-link-source">
-                <a href = ${PROJECT_DATA[projectTileId].link} target="_blank">Source Code</a> 
-            </div>
-        </div>
-    `;
-
-    let modalContent = modal.querySelector('.modal-content');
-
-    modalContent.append(createModalDownloadInstructions(modalData));
-
-    //modal does not work if appended to 'body' .: prepending to body
-    document.body.prepend(modal);
-
-    let modalClose = document.querySelector(".modal-close");
-    console.log(modalClose);
+    //firstElementChild needed to change DocumentFragment into HTMLElement so event listeners can work
+    let modal = document.querySelector("#template_modal").content.firstElementChild.cloneNode(true);
+    modal.querySelector(".modal-header").innerText = projectData.header;
+    modal.querySelector(".modal-description").innerText = projectData.description;
+    modal.querySelector(".modal-gif").src = modalData.gif.src;
+    modal.querySelector(".modal-link-source").querySelector("a").href = projectData.link;
+    modal.querySelector('.modal-content').append(createModalDownloadInstructions(modalData));
 
     //destroy opened modal upon closing it
     window.onclick = (event) => {
@@ -127,24 +74,47 @@ const createAndShowModal = (event) => {
             document.body.removeChild(modal);
         }
     }
-    modalClose.onclick = () => {
+    modal.querySelector(".modal-close").onclick = () => {
         modal.style.display = 'none';
         document.body.removeChild(modal);
+    }
+
+    //modal does not work if appended to 'body' .: prepending to body
+    document.body.prepend(modal);
+}
+
+const getProjectData = (event) => {
+    let pathIndex = getProjectTileIndex(event);
+    let projectHeader= event.composedPath()[pathIndex].querySelector(".project-tile-header").innerText;
+
+    console.log(projectHeader);
+    let projectData = PROJECT_DATA.filter((project) => {
+        console.log(project.header);
+        return project.header === projectHeader;
+    })
+
+    return projectData[0];
+}
+
+/**
+ * finds the Project Tile Index in the click event path array
+ * 
+ * @param {*} event 
+ * @returns {Number} projectTileIndex
+ */
+const getProjectTileIndex = (event) => {
+    let path = event.composedPath();
+    for(let i = 0; i<path.length; i++){
+        if(path[i].classList.contains('project-tile')){
+            return i;
+        }
     }
 }
 
 const createModalDownloadInstructions = (modalData) => {
-    let modalDownloadInstructions = document.createElement('div');
-    modalDownloadInstructions.className = "modal-download-instructions";
-
-    let instructionHeader = document.createElement('h2');
-    instructionHeader.innerText = "Download Instructions";
-
-    /* REQUIREMENTS */
-    let requirementsHeader = document.createElement('h3');
-    requirementsHeader.innerText = "Requirements:";
-
-    let requirementsList = document.createElement('ul');
+    let modalDownloadInstructions = document.querySelector("#template_modal-download-instructions").content.cloneNode(true);
+    
+    let requirementsList = modalDownloadInstructions.querySelector("ul");
     modalData.downloadInstructions.requirements.forEach((item) => {
         let listItem = document.createElement('li');
         listItem.innerText = item;
@@ -152,43 +122,14 @@ const createModalDownloadInstructions = (modalData) => {
         requirementsList.appendChild(listItem);
     });
 
-    /* STEPS TO RUN APPLICATION */
-    let stepsHeader = document.createElement('h3');
-    stepsHeader.innerText = "Steps to Run Application";
-
-    let stepsList = document.createElement('ol');
+    let stepsList = modalDownloadInstructions.querySelector("ol");
     modalData.downloadInstructions.stepsToRunApplication.forEach((item) => {
         let listItem = document.createElement('li');
         listItem.innerHTML = item;
 
         stepsList.appendChild(listItem);
-    })
-
-    modalDownloadInstructions.append(
-        instructionHeader, 
-        requirementsHeader, 
-        requirementsList, 
-        stepsHeader, 
-        stepsList);
-
+    });
     return modalDownloadInstructions;
-}
-
-/**
- * finds the Project Tile Index in the click event path
- * 
- * @param {*} event 
- * @returns {Number} projectTileIndex
- */
-const getProjectTileIndex = (event) => {
-    for(let i = 0; i<event.composedPath().length; i++){
-        let item = event.composedPath()[i];
-
-        if(item.classList.contains('project-tile')){
-            console.log(i);
-            return i;
-        }
-    }
 }
 
 const createProjectTileImage = (project) => {
@@ -196,47 +137,33 @@ const createProjectTileImage = (project) => {
     let fallbackImages = project.images.fallback.srcsetFileNames;
     let directory = project.images.directory;
 
-    let projectTileImage = document.createElement('div');
-    projectTileImage.classList.add('project-tile-img');
+    let projectTileImage = document.querySelector('#template_project-tile-img').content.cloneNode(true);
+    
+    Object.assign(projectTileImage.querySelector("source"),{
+        'type': 'image/webp',
+        'srcset': `${directory}/${webpImages[0]} 1x, ${directory}/${webpImages[1]} 2x`
+    });
 
-    let picture = document.createElement('picture');
-    let source = document.createElement('source');
-    source.setAttribute('type', 'image/webp');
-    source.setAttribute('srcset',`${directory}/${webpImages[0]} 1x, ${directory}/${webpImages[1]} 2x`)
-
-    let image = document.createElement('img');
-    image.setAttribute('src',`${directory}/${project.images.fallback.srcFileName}`);
-    image.setAttribute('srcset',`${directory}/${fallbackImages[0]} 1x, ${directory}/${fallbackImages[1]} 2x`)
-    image.setAttribute('alt', project.images.altText);
-
-    picture.append(source);
-    picture.append(image);
-    projectTileImage.append(picture);
+    Object.assign(projectTileImage.querySelector("img"),{
+        'src': `${directory}/${project.images.fallback.srcFileName}`,
+        'srcset': `${directory}/${fallbackImages[0]} 1x, ${directory}/${fallbackImages[1]} 2x`,
+        'alt': project.images.altText
+    });
 
     return projectTileImage;
 }
 
 const createProjectTileTags = (project) => {
-    let p = document.createElement('p');
-    p.classList.add('project-tile-tags');
-    p.innerText = project.tags.join(' | ');
+    let projectTileTags = document.querySelector("#template_project-tile-tags").content.cloneNode(true);
+    projectTileTags.querySelector(".project-tile-tags").innerText = project.tags.join(' | ');
 
-    return p;
+    return projectTileTags;
 }
 
 const createProjectTileBody = (project) => {
-    let projectTileBody = document.createElement('div');
-    projectTileBody.classList.add('project-tile-body');
-
-    let projectTileHeader = document.createElement('h1');
-    projectTileHeader.classList.add('project-tile-header');
-    projectTileHeader.innerText = project.header;
-
-    let projectTileDescription = document.createElement('p');
-    projectTileDescription.classList.add('project-tile-description');
-    projectTileDescription.innerText = project.description;
-
-    projectTileBody.append(projectTileHeader, projectTileDescription);
-
+    let projectTileBody = document.querySelector("#template_project-tile-body").content.cloneNode(true);
+    projectTileBody.querySelector(".project-tile-header").innerText = project.header;
+    projectTileBody.querySelector(".project-tile-description").innerText = project.description;
+    
     return projectTileBody;
 }
