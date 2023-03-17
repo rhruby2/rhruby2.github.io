@@ -154,7 +154,7 @@
                     ]
                 },
                 "fallback": {
-                    "srcFileName": "images/CS342ProjectNerd-480w.png",
+                    "srcFileName": "CS342ProjectNerd-480w.png",
                     "srcsetFileNames": [
                         "CS342ProjectNerd-786w.png",
                         "CS342ProjectNerd-1024w.png"
